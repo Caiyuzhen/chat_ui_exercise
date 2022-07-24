@@ -3,17 +3,19 @@ import theme from '../../theme'
 
 
 
-//使用 css 函数来创建需要复用的样式
-const circleMixinFunc = (color) => css`
+//🌟协同人状态, 这里使用 css 函数来创建需要复用的样式
+const circleMixinFunc = (color, size="8px") => css`
 	content: "";
 	position: absolute;
 	display: block;
-	width: 8px;
-	height: 8px;
+	width: ${ size };
+	height: ${ size };
 	/* 🔥🔥🔥可以访问 theme！ */
 	background-color: ${color};//类比解构赋值出 theme
 	border-radius: 50%;
-`;
+	/* 固定长宽比例 */
+	aspect-ratio: 1/1;
+`
 
 
 
@@ -30,14 +32,25 @@ const StatusIcon = styled.div`
   left:2px;
   top:4px;
 
-  //⚡️用伪元素添加内容(内容前面，内容后面, & 表示外层父 div ，也可以省略【类比图层的概念】)
+  /*⚡️用伪元素添加元素
+  	前面有绿色圆点，内容后面有白色圆点
+	& 表示外层父 div ，也可以省略【类比图层的概念】
+  */
   &::before{
-	${( {theme} ) => circleMixinFunc("white")};
+	${( { size } ) => circleMixinFunc("white",size)};
 	/* 用放大来让两个元素居中，而不是直接设置宽高 */
 	transform: scale(2);
   }
-  &::after{
-	${( {theme} ) => circleMixinFunc(theme.green)}
+  
+  &::after{ //因为我们把 status 跟 size 的状态属性传给了它
+	${( {theme ,status, size} ) => {
+			if(status === 'online'){
+				return circleMixinFunc(theme.green, size)	//根据 index.js 返回的 props 可以判断是什么状态(在不在线，然后显示对应的协同头像颜色！！)
+			} else if(status === 'offline'){
+				return circleMixinFunc(theme.gray, size)
+			}
+		}
+	}
   }
 `
 
@@ -48,8 +61,8 @@ const StatusIcon = styled.div`
 
 //头像蒙板
 const AvatarClip = styled.div`
-	width:48px;
-	height:48px;
+	width:${ ( {size} ) => size }; //传入的是在 index.js 中被解构出来的属性！！
+	height:${ ( {size} ) => size };	//传入的是在 index.js 中被解构出来的属性！！
 	border-radius: 50%;
 	overflow: hidden;
 `
