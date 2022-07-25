@@ -1,0 +1,10 @@
+/*  storybook 的 css 样式*/
+
+.row-element {
+	display: flex;
+}
+
+/* 🌟🌟所有子元素的间距都为 8px */
+.row-element > * {
+	margin: 8px;
+}
