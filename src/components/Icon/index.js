@@ -1,9 +1,7 @@
-// 👆表示组件的 【路径】 和 【从命令行中取出来的名称】 
-
-
 import React from 'react'
 import PropTypes from 'prop-types'
 import StyleIcon from './style'
+
 
 
 /*这些 props 属性都是可以自定义的
@@ -20,7 +18,8 @@ function Icon({
 	return (			
 	   // 👇把其他所有 ...rest 属性交给 StyleIcon 
 	   <StyleIcon color={color} opacity={opacity} {...rest}> 
-		  {IconComponent && <IconComponent/>}
+	   		{/* 有传入 svg 才会生成*/}
+			{IconComponent && <IconComponent width={width} height={height}/>}
 	   </StyleIcon>
 	)
 }
@@ -29,7 +28,11 @@ function Icon({
 
 /*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
 Icon.propTypes = {
-
+	icon: PropTypes.element,
+	width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+	color: PropTypes.string,
+	opacity: PropTypes.number,
 };
 
 
