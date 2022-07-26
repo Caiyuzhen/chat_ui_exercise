@@ -1,8 +1,7 @@
-//配置工程
 {
 	"compilerOptions": {
-		"baseUrl": "src" //会被起始路径设置为 src
+		"baseUrl": "src"
 	},
-	"include": ["src"], //会把哪些文件夹当作源代码，可以让搜索变快
-	"exclude": ["node_modules","**/node_modules/*"] //哪些文件夹不属于源代码，可以排除【根目录】以及【子目录】下所有的 node_modules 目录
+	"include": ["src"], 
+	"exclude": ["node_modules","**/node_modules/*"] 
 }

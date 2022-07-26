@@ -7,8 +7,8 @@ import React from "react";
 import <%= name %> from ".";
 
 export default {
-	title: "<%= name%>"
-	components: <%= name%>
+	title: "<%= name%>",
+	component: <%= name%>
 };
 
-export const Default =()=> <<%= name%>>默认</<%= name%>>
+export const Default = () => <<%= name%>>默认</<%= name%>>

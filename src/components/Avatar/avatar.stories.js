@@ -9,7 +9,7 @@ import "../../story.css"//🔥🔥加载外部样式！！
 
 
 export default{
-	title:'Avatar',
+	title:'UI 组件/Avatar',
 	component: Avatar,
 }
 

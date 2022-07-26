@@ -1,7 +1,8 @@
 ---
 to: src/components/<%= name %>/index.js
----
 # 👆表示组件的 【路径】 和 【从命令行中取出来的名称】 
+---
+
 
 
 import React from 'react'
@@ -13,10 +14,10 @@ import Style<%= name %> from './style'
 function <%= name %>({children,...rest}) {
 
 	return (
-	// 👇把其他所有 ...rest 属性交给 Style<%= name %> 
-	<Style<%= name %> {...rest}> 
-		{children}
-	</Style<%= name %>>
+		// 👇把其他所有 ...rest 属性交给 Style<%= name %> 
+		<Style<%= name %> {...rest}> 
+			{children}
+		</Style<%= name %>>
 	)
 }
 
