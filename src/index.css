@@ -1,3 +1,9 @@
+html {
+	/* 👇小技巧，在全局设置一个字体比例后，1rem 就是 10px, 设置后记得加载到 storybook 中，storybook 是独立的运行环境 */
+	font-size:62.5%;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

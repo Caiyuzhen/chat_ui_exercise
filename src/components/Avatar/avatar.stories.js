@@ -4,7 +4,7 @@ import face1 from '../../assets/images/face-female-1.jpg'
 import face2 from '../../assets/images/face-female-2.jpg'
 import face3 from '../../assets/images/face-female-3.jpg'
 import face4 from '../../assets/images/face-female-4.jpg'
-import "../../story.css"//🔥🔥加载外部样式！！
+// import "../../story.css"//🔥🔥加载外部样式！！(后续写在 preview 了)
 
 
 

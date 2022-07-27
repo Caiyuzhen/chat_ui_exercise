@@ -1,4 +1,8 @@
-/*  storybook 的 css 样式*/
+/*  storybook 内的 css 样式*/
+
+
+
+@import url('./index.css')
 
 .row-element {
 	display: flex;
