@@ -6,7 +6,7 @@ import { faCommentDots } from "@fortawesome/free-solid-svg-icons"
 
 export default {
 	title: "UI 组件/Badge",
-	component: Badge,
+	component: Badge
 };
 
 export const Default = () => <Badge count={5}/>

@@ -22,6 +22,8 @@ const StyledButton = styled.div`
 	background-color:${( {theme} ) => theme.primaryColor}//使用主题中的颜色
 `
 
+
+
 /*用 props 来获取按钮属性（方法二，解构赋值）
 🌟🌟🌟props 可以传递事件，所以为了避免两个按钮都触发一个事件，可以用 props 的值 比如 label 来接收按钮事件*/
 function Button({width, onClick, label, children}){ //{}相当于解构赋值了 props
