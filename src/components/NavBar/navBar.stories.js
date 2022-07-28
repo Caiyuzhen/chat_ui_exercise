@@ -8,8 +8,10 @@ export default {
 	component: NavBar,
 };
 
-export const Default = () => <NavBar>默认</NavBar>
+export const Default = () => <NavBar/>
 
 export const Menu = () => {
-	return <MenuItem showBadge active icon={faCommentDots}/>
+	return( 
+		<MenuItem showBadge active icon={faCommentDots}/>
+	)
 }

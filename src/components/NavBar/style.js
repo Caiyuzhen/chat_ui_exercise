@@ -1,4 +1,4 @@
-import { FontAwesome } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components";
 
 
@@ -6,13 +6,12 @@ import styled from "styled-components";
 const StyledNavBar = styled.div``;
 
 //侧导航 Tab
-const StyleMenuItem = styled(FontAwesome)``
+const StyledMenuItem = styled.div``;
 
-
-//侧导航 icon
-const MenuIcon = styled.div
+//侧导航 icon styled 内 包裹(FontAwesome)就可以传入 fortawesome 的 icon
+const MenuIcon = styled(FontAwesomeIcon)``;
 
 
 
 export default StyledNavBar;
-export  { StyleMenuItem, MenuIcon }
+export  { StyledMenuItem, MenuIcon }
