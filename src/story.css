@@ -1,8 +1,6 @@
 /*  storybook 内的 css 样式*/
-
-
-
-@import url('./index.css')
+@import url('./index.css');
+/* 👆ji 记得加分号！！ */
 
 .row-element {
 	display: flex;
@@ -11,4 +9,9 @@
 /* 🌟🌟所有子元素的间距都为 8px */
 .row-element > * {
 	margin: 8px;
+}
+
+/* 全局去除表单类的标签点击时的边框 */
+input,button,select{
+	outline: none;
 }

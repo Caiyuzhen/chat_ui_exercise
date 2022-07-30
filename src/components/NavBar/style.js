@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { StatusIcon, StyleAvatar } from "components/Avatar/style"
 import styled from "styled-components";
 import { activeBar } from "utils/mixin"
 
@@ -12,6 +13,15 @@ const StyledNavBar = styled.nav`
 	height: 100vh;//占满浏览器
 	background-color: ${( {theme} ) => theme.darkPurple};
 	padding: 30px 0;
+
+	${StyleAvatar}{
+		justify-self: center;
+		${StatusIcon}{
+			&::before{
+				background-color: ${({theme}) => theme.darkPurple};
+			}
+		}
+	}
 `
 
 
@@ -37,7 +47,8 @@ const StyledMenuItem = styled.div`
 
 //菜单项（item）
 const MenuItems = styled.div`
-
+	display: grid;
+	grid-template-rows: repeat(5 ,minmax(auto,88px)) 1fr;//表示前 5 个 图标取 auto~ 88px 的值，上面设置了 height: 74px; ，所以这里的 auto 就是 74px，然后最后一项 1fr 是浮动高度占满剩余空间(要配合 align-self:end)
 `
 
 

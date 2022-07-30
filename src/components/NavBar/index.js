@@ -23,7 +23,7 @@ function NavBar({children,...rest}) {
 				<MenuItem icon={faFolder}/>
 				<MenuItem icon={faStickyNote}/>
 				<MenuItem icon={faEllipsisH}/>
-				<MenuItem icon={faCog}/>	
+				<MenuItem icon={faCog} css={`align-self:end`}/>	
 			</MenuItems>
 		</StyledNavBar>
 	)

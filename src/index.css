@@ -17,3 +17,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* 全局去除表单类的标签点击时的边框 */
+input,button,select{
+	outline: none;
+}
