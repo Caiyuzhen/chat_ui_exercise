@@ -10,7 +10,7 @@ const StyledButton = styled.button`
 	//根据按钮的颜色来设置投影的主色
 	box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
 	
-	//引用下面样式组件的变量
+	//引用下面样式组件的变量(不需要重新渲染的话就直接引用)
 	${ ({shape})=> shapeVariants[shape] } 
 	${ ({type})=> typeVariants[type] }
 	${ ({bgColor} )=>`background-color:${bgColor}`} //根据 index 传入的 bgcolor 值来设置背景色
