@@ -12,7 +12,15 @@ export default {
 	gray5: "#D8D8D8",
 	grayDark: "181C2F",          //输入框文字
 	darkPurple: '#292f4C',       //侧导航紫色
-
+	
+	xxsmallFont: "0.8rem",		//8px 超小号字体
+	xsmallFont: "1rem",			//10px 小号字体
+	smallFont: "1.2rem",		 //12px 的默认字体
 	normalFont:'1.4rem',         //14px 的默认字体
-	mediumFont:'1.6rem'			//16px 的默认字体
+	mediumFont:'1.6rem',		//16px 的默认字体
+	largeFont: "1.8rem",		//18px 大号字体
+	xlargeFont: "2.4rem",			//20px 加大号字体
+	xxlargeFont: "2.8rem",		//24px 超大号字体
+	
+	
 };

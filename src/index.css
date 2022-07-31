@@ -1,3 +1,11 @@
+/* 去除所有元素的默认样式 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
 html {
 	/* 👇小技巧，在全局设置一个字体比例后，1rem 就是 10px, 设置后记得加载到 storybook 中，storybook 是独立的运行环境 */
 	font-size:62.5%;
