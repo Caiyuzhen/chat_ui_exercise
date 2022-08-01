@@ -4,7 +4,7 @@ import styled, {css} from "styled-components";
 
 
 
-const StyledParagraph = styled(StyledText)`//🔥🔥直接包裹 Text 组件的 样式组件！！
+const StyledParagraph = styled(StyledText)`//🔥🔥继承 Text 组件的 样式组件！！并进行修改
 	//判断是否显示省略号
 	${( {ellipsis})=>
 		ellipsis && css`

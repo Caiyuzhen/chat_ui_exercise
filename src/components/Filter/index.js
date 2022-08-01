@@ -17,19 +17,21 @@ function Filter({children,...rest}) {
 
 
 //⚡️⚡️把 FilterItems 作为 Filter 的子组件来导出
-Filter.FilterItems = ({children, label, ...rest}) => {
+Filter.FilterItems = ({children, label, ...rest}) => (
 	<FilterItems {...rest}>
 		<Text type='secondary'>{label}: </Text>
 		{children}
 	</FilterItems>
-}
+)
 
-Filter.Action = ({children, label, ...rest}) => {
+Filter.Action = ({children, label, ...rest}) => (
 	<Action {...rest}>
+		{/* 🪵🪵注意，这里调用了组件，所以在 style.js 内要更改样式得用 ${StyledText}{} 并进行 import！！！ */}
 		<Text type='secondary'>{label}</Text>
 		{children}
 	</Action>
-}
+)
+
 
 
 
@@ -39,7 +41,7 @@ Filter.Action = ({children, label, ...rest}) => {
 /*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
 Filter.propTypes = {
 	children: PropTypes.any,
-	label: PropTypes.any,
+	// label: PropTypes.any,
 };
 
 
