@@ -19,7 +19,7 @@ const FilterItems = styled.div`
 //右侧 Add 按钮
 const Action = styled.div`
 	justify-self: end; //对齐右侧
-	/* 🪵🪵注意，因为在 index.js 调用了组件，所以在 style.js 这里要更改样式得用 ${StyledText}{} 并进行 import！！！ */
+	/* 🪵🪵注意，因为在 index.js 调用了 Text 组件，所以在 style.js 这里要更改样式得用 ${StyledText}{} 并进行 import！！！ */
 	${StyledText}{  
 		padding-right:1rem;
 		/* 更改字体颜色 */
