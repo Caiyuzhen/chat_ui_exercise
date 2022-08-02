@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import StyleMessageCard,{Name,Status,Time,Message,MessageText,UnreadBadge} from './style'
-import Avatar from 'component/Avatar'
+import Avatar from 'components/Avatar'
 
 
 
@@ -42,7 +42,16 @@ function MessageCard({
 
 /*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
 MessageCard.propTypes = {
-	children: PropTypes.any
+	avatarSrc: PropTypes.string.isRequired,
+	avatarStatus: PropTypes.any,
+	statusText: PropTypes.any,
+	name: PropTypes.any,
+	time: PropTypes.any,
+	message: PropTypes.any,
+	unreadCount: PropTypes.number,
+	active: PropTypes.bool,
+	replied: PropTypes.bool,
+	children: PropTypes.any,
 };
 
 

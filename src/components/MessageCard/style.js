@@ -1,10 +1,14 @@
 import Text from "components/Text"
 import Badge from "components/Badge"
 import styled from "styled-components";
+import { card } from "utils/mixin"
 
 
 //整体卡片
-const StyledMessageCard = styled.div``;
+const StyledMessageCard = styled.div`
+	/*  🚀🚀🚀 调用 mixins.js 中的 Card 布局！！ */
+	${ card() }
+`
 
 
 //🔥🔥用户名,传入 Text 组件，并传入样式（字号）！！这样就省了在 index.js 内去传入属性

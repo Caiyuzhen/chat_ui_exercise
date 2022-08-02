@@ -5,6 +5,7 @@ export default {
 	green: '#34D859',           //在线状态
 	gray: '#9B9B9B',            //离线状态
 	red: '#F34848',				//Badge 红色
+	white: '#FFFFFF',			//白色背景
 
 	gray2: "rgba(241, 237, 237, 0.3)",//输入框背景
 	gray3: "rgba(24, 28, 47, 0.3)",	  //占位符

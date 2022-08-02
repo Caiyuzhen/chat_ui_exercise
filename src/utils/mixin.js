@@ -1,6 +1,7 @@
 // 存放一些通用的样式 js
 //比如创建【圆形】、【高亮 Tab】等
 import { css } from 'styled-components';//导入 css 函数
+import theme from 'theme'
 
 
 
@@ -45,3 +46,10 @@ export const activeBar = ({barWidth='8px', shadowWidth='20px'}={}) => css`
 	}
 `
 
+//🎴生成 Card 样式的组件
+export const card = (radius='6px', padding='20px 30px') => css`
+	padding: ${ padding };
+	border-radius: ${ radius };
+	background-color: ${( {theme} ) => theme.white};
+	box-shadow: 0px 18px 40px 0px rgba(0,0,0,0.05);
+`
