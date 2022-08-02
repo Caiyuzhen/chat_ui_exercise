@@ -24,7 +24,7 @@ function MessageCard({
 		<>					
 			{/* // 👇把其他所有 ...rest 属性交给 StyleMessageCard 
 			//先定义数据状态 + 定义样式 */}
-			<StyleMessageCard {...rest}> 
+			<StyleMessageCard {...rest} active={active}> 
 				<Avatar src={avatarSrc} status={avatarStatus}/> 
 				<Name>{name}</Name>
 				<Status>{statusText}</Status>

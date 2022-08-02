@@ -11,9 +11,9 @@ export const Default = () => (
 	<MessageCard
 		// avatarSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		avatarSrc={face1}
-		avatarStatus='Online'
+		name="Lucy"
+		avatarStatus='online'
 		statusText="在线"
-		name="Jimmy"
 		time="3 hours ago"
 		message="Anger begins with folly, and ends in repentance. "
 		unreadCount={12}

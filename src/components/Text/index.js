@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyleText from './style'
+import StyledText from './style'
 
 
 
@@ -8,9 +8,9 @@ function Text({children, type='primary', size='normal', bold, ...rest}) {
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyleText 
-		<StyleText type={type} size={size} bold={bold} {...rest}> 
+		<StyledText type={type} size={size} bold={bold} {...rest}> 
 			{children}
-		</StyleText>
+		</StyledText>
 	)
 }
 
