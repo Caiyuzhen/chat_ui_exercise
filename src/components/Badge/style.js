@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { circle } from "utils/mixin";
 
 
-//🔥🔥不同头像的变体(也是一个组件，样式组件)
+//🔥🔥不同 Badge 的变体(也是一个组件，样式组件)
 const variants = {
 	//⭕️⭕️形态一： 小红点的形态
 	dot: css`
@@ -23,6 +23,7 @@ const variants = {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		font-weight: bold;
 		box-shadow:
 			0px 18px 40px 0px rgba(0,0,0,0.04),
 			0px 6px 12px 0px rgba(0,0,0,0.08);

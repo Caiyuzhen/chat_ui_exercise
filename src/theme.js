@@ -4,7 +4,7 @@ export default {
 	primaryColor: '#6256FA',	//主色调
 	green: '#34D859',           //在线状态
 	gray: '#9B9B9B',            //离线状态
-	red: '#F34848',				//Badge 红色
+	red: '#EE33BA',				//Badge 红色
 	white: '#FFFFFF',			//白色背景
 
 	gray2: "rgba(241, 237, 237, 0.3)",//输入框背景
@@ -12,7 +12,7 @@ export default {
 	gray4: "#EFECE8",
 	gray5: "#D8D8D8",
 	grayDark: "181C2F",          //输入框文字
-	darkPurple: '#292f4C',       //侧导航紫色
+	darkPurple: '#31306A',       //侧导航紫色
 	
 	xxsmallFont: "0.8rem",		//8px 超小号字体
 	xsmallFont: "1rem",			//10px 小号字体
@@ -22,6 +22,9 @@ export default {
 	largeFont: "1.8rem",		//18px 大号字体
 	xlargeFont: "2.4rem",			//20px 加大号字体
 	xxlargeFont: "2.8rem",		//24px 超大号字体
+
+	inactiveColorNor: "rgba(41,47,76,0.85)", //已回复的图标颜色(旋转小箭头), 在未点击状态白背景的展示
+	inactiveColorDark: "white", //已回复的图标颜色(旋转小箭头), 在点击状态黑背景的展示
 	
 	
 };

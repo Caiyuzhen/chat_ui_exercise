@@ -1,6 +1,7 @@
 import React from "react";
 import MessageCard from ".";
 import face1 from 'assets/images/face-female-4.jpg'
+import face2 from 'assets/images/face-female-3.jpg'
 
 export default {
 	title: "UI 组件/MessageCard",
@@ -11,12 +12,13 @@ export const Default = () => (
 	<MessageCard
 		// avatarSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		avatarSrc={face1}
-		name="Lucy"
+		name="Amanda"
 		avatarStatus='online'
 		statusText="在线"
 		time="3 hours ago"
 		message="Anger begins with folly, and ends in repentance. "
 		unreadCount={12}
+		replied
 		// avatarSrc,    //头像 url
 		// avatarStatus, //头像状态
 		// statusText,  //头像状态文字
@@ -27,4 +29,19 @@ export const Default = () => (
 		// active, 	//是否为激活状态
 		// replied,    //是否已回复
 	/>
-	)
+)
+
+
+export const Active = () => (
+	<MessageCard
+		avatarSrc={face2}
+		name="Caroline"
+		avatarStatus='offline'
+		statusText="离线"
+		time="1 hours ago"
+		message="Read, study and learn about everything imporant in your life"
+		unreadCount={12}
+		replied
+		active
+	/>
+)

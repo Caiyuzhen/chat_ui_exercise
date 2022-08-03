@@ -42,7 +42,7 @@ const StyledMessageCard = styled.div`
 			${Status}, ${Time}{
 				opacity: 0.4;
 			}
-			${activeBar({ barWidth:'4px', shadowWidth:'14px' })}
+			${activeBar({ barWidth:'4px', shadowWidth:'14px' })}//左侧高亮条
 			overflow: hidden;
 	`}
 	
@@ -68,8 +68,14 @@ const Status = styled(Text).attrs({type:'secondary'})`
 const Message = styled.div`
 	grid-area: message; //让 Message 站在上面的 Grid 的 template 位置
 	display: grid; //🌟消息容器本身也是 Grid 布局！！
-	grid-template-columns: 1fr 30px; //（固定宽度）+（浮动宽度）
+	grid-template-columns: 1fr 30px; //未读状态只显示两栏：（固定宽度）+（浮动宽度）
 	align-items: center; //垂直居中
+	//如果是已读状态则显示为三栏 （固定宽度）+（浮动宽度）+ （固定宽度）
+	${ ({replied})=> 
+		replied && css`
+			grid-template-columns: 24px 1fr 30px;
+		`
+	 }
 `
 
 //消息体本身的 div

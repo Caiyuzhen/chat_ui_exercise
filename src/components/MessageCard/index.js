@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import StyleMessageCard,{Name,Status,Time,Message,MessageText,UnreadBadge} from './style'
 import Avatar from 'components/Avatar'
-
+import { useTheme } from 'styled-components'
+import { ReactComponent as Replied } from 'assets/icons/replied.svg'
+import Icon from 'components/Icon'
 
 
 
@@ -20,6 +22,12 @@ function MessageCard({
 	...rest
 	}) {
 
+	
+	const theme = useTheme() //💅💅💅 调用 useTheme() 这个 hook 来修改样式！！
+
+
+
+		
 	return (
 		<>					
 			{/* // 👇把其他所有 ...rest 属性交给 StyleMessageCard 
@@ -29,7 +37,18 @@ function MessageCard({
 				<Name>{name}</Name>
 				<Status>{statusText}</Status>
 				<Time>{time}</Time>
-				<Message>
+				<Message replied={replied}>
+					{/* 如果已读，就显示已读 icon */}
+					{ Replied && <Icon
+						icon={Replied}
+						width={16}
+						height={16}
+						color={ active ? theme.inactiveColorDark : theme.inactiveColorNor } //激活状态，则更显示深一点的 icon
+						opacity={ active ? 0.4 : 1}
+						style={{
+							justifyContent: 'center', //靠左对齐（在网格内）
+						}}
+					/>}
 					<MessageText>{message}</MessageText>
 					<UnreadBadge count={unreadCount}/>
 				</Message>	
