@@ -38,15 +38,15 @@ function MessageCard({
 				<Status>{statusText}</Status>
 				<Time>{time}</Time>
 				<Message replied={replied}>
-					{/* 如果已读，就显示已读 icon */}
-					{ Replied && <Icon
+					{/* 🚀🚀如果已读，就加载已读的样式（三栏 Grid） */}
+					{ replied && <Icon
 						icon={Replied}
 						width={16}
 						height={16}
 						color={ active ? theme.inactiveColorDark : theme.inactiveColorNor } //激活状态，则更显示深一点的 icon
 						opacity={ active ? 0.4 : 1}
 						style={{
-							justifyContent: 'center', //靠左对齐（在网格内）
+							justifyContent: 'start', //靠左对齐（在网格内）
 						}}
 					/>}
 					<MessageText>{message}</MessageText>

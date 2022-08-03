@@ -8,9 +8,10 @@ export default {
 	component: MessageCard
 };
 
+
+//未回复，未激活
 export const Default = () => (
 	<MessageCard
-		// avatarSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
 		avatarSrc={face1}
 		name="Amanda"
 		avatarStatus='online'
@@ -18,7 +19,6 @@ export const Default = () => (
 		time="3 hours ago"
 		message="Anger begins with folly, and ends in repentance. "
 		unreadCount={12}
-		replied
 		// avatarSrc,    //头像 url
 		// avatarStatus, //头像状态
 		// statusText,  //头像状态文字
@@ -32,7 +32,38 @@ export const Default = () => (
 )
 
 
+//未回复，已激活
 export const Active = () => (
+	<MessageCard
+		avatarSrc={face2}
+		name="Caroline"
+		avatarStatus='offline'
+		statusText="离线"
+		time="1 hours ago"
+		message="Read, study and learn about everything imporant in your life"
+		unreadCount={12}
+		active
+	/>
+)
+
+
+//已回复，未激活
+export const RepliedInactive = () => (
+	<MessageCard
+		avatarSrc={face2}
+		name="Caroline"
+		avatarStatus='offline'
+		statusText="离线"
+		time="1 hours ago"
+		message="Read, study and learn about everything imporant in your life"
+		unreadCount={12}
+		replied
+	/>
+)
+
+
+//已回复，已激活
+export const Replied = () => (
 	<MessageCard
 		avatarSrc={face2}
 		name="Caroline"
@@ -45,3 +76,5 @@ export const Active = () => (
 		active
 	/>
 )
+
+
