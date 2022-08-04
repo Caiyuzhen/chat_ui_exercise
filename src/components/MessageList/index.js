@@ -8,6 +8,10 @@ import Option from 'components/Option'
 import Icon from 'components/Icon'
 import { ReactComponent as Plus } from 'assets/icons/plus.svg'
 import Input from 'components/Input'
+import MessageCard from 'components/MessageCard'
+import face1 from 'assets/images/face-male-1.jpg'
+
+
 
 
 // 组装所有组件形成消息列表
@@ -20,7 +24,19 @@ function MessageList({children,...rest}) {
 			<Input.Search/>
 			<ChatFilter/>
 			<ChatList>
-				
+				{[1,2,3,4,5,6].map((_,index)=>( //🍔🍔🍔🔥使用 map 循环来生成 6 张消息卡片
+					<MessageCard 
+						key={index} //必须要加个 key ！
+						active={index === 2}//第 3 张为选中态
+						replied={index % 3 ===0}//每隔三个为已回复的状态
+						avatarSrc={face1}
+						name='Alan'
+						avatarStatus='online'
+						time='8小时之前'
+						message='Four short words sum up what has lifted most successful individuals above the crowd: a little bit more.'
+						unreadCount={6}
+					/>
+				))}
 			</ChatList>
 		</StyleMessageList>
 	)
@@ -32,7 +48,7 @@ function MessageList({children,...rest}) {
 function ChatFilter(){
 	return(
 	<Filter style={{padding:'20px 0'}}>
-		{/* 传参 ,FilterItems 为左侧过滤菜单的名字 */}
+		{/* 传参 ,FilterItems 为左侧过滤菜单的【 item 选项】*/}
 		<Filter.FilterItems label='列表排序'>
 			<Select>
 				<Option>最新消息优先</Option>
