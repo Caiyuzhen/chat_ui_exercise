@@ -11,9 +11,9 @@ import Icon from 'components/Icon'
 function MessageCard({
 	avatarSrc,    //头像 url
 	avatarStatus, //头像状态
-	statusText,  //头像状态文字
-	name,  		 //名字
-	time,       //时间
+	statusText,  //头像状态文本
+	name,  		 //名字文本
+	time,       //时间文本
 	message,     //消息体
 	unreadCount,  //未读数
 	active, 	//是否为激活状态
