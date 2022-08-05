@@ -6,6 +6,7 @@ export default {
 	gray: '#9B9B9B',            //离线状态
 	red: '#EE33BA',				//Badge 红色
 	white: '#FFFFFF',			//白色背景
+	background: "white",		//背景色
 
 	gray2: "rgba(241, 237, 237, 0.3)",//输入框背景
 	gray3: "rgba(24, 28, 47, 0.3)",	  //占位符
@@ -23,7 +24,7 @@ export default {
 	xlargeFont: "2.4rem",			//20px 加大号字体
 	xxlargeFont: "2.8rem",		//24px 超大号字体
 
-	inactiveColorNor: "rgba(41,47,76,0.85)", //已回复的图标颜色(旋转小箭头), 在未点击状态白背景的展示
+	inactiveColor: "rgba(41,47,76,0.85)", //已回复的图标颜色(旋转小箭头), 在未点击状态白背景的展示
 	inactiveColorDark: "white", //已回复的图标颜色(旋转小箭头), 在点击状态黑背景的展示
 	
 	

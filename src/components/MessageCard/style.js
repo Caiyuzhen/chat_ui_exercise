@@ -3,10 +3,11 @@ import Badge from "components/Badge"
 import styled, { css } from "styled-components"
 import { card,activeBar } from "utils/mixin"
 import StyledAvatar from "components/Avatar/style"
+import Paragraph from "components/Paragraph"
 
 
 
-//整体卡片
+//消息卡片的样式
 const StyledMessageCard = styled.div`
 	/*  🚀🚀🚀 调用 mixins.js 中的 Card 样式（卡片投影）！！ */
 	${ card() }
@@ -18,6 +19,7 @@ const StyledMessageCard = styled.div`
 		"message message message";
 	grid-template-columns: 64px 1fr 1fr;//⚡️头像列 64px（固定宽度），其余两列平分空间(浮动宽度)
 	row-gap: 16px; //网格高度行间距
+	background: ${({ theme }) => theme.background};
 	transition: 0.4s;	
 	&:hover{
 		box-shadow: 0px 20px 50px rgba(0,0,0,0.15);
@@ -31,7 +33,7 @@ const StyledMessageCard = styled.div`
 	}
 
 	//点击态！！如果是鼠标按下的激活态，则给予另一种样式！！短路运算来判读
-	//几个组件的字体都反白
+	//几个组件的字体颜色在选中的状态下都反白
 	/* 隐藏外露的部分 */
 	${({ active }) =>
 		active && css`
@@ -47,6 +49,8 @@ const StyledMessageCard = styled.div`
 	`}
 	
 `
+
+
 
 
 //🔥🔥用户名,传入 Text 组件，并传入样式（字号）！！这样就省了在 index.js 内去传入属性
@@ -79,7 +83,7 @@ const Message = styled.div`
 `
 
 //消息体本身的 div
-const MessageText = styled(Text).attrs({ ellipsis: true })`
+const MessageText = styled(Paragraph).attrs({ ellipsis: true })`
 	
 `
 
@@ -91,5 +95,8 @@ const UnreadBadge = styled(Badge)`
 
 
 
-export {Name,Time,Status,Message,MessageText,UnreadBadge}
+
+
+
 export default StyledMessageCard;
+export { Name, Time, Status, Message, MessageText, UnreadBadge };

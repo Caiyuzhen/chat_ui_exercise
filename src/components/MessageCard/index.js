@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyleMessageCard,{Name,Status,Time,Message,MessageText,UnreadBadge} from './style'
+import StyledMessageCard,{Name,Status,Time,Message,MessageText,UnreadBadge} from './style'
 import Avatar from 'components/Avatar'
 import { useTheme } from 'styled-components'
 import { ReactComponent as Replied } from 'assets/icons/replied.svg'
@@ -29,31 +29,32 @@ function MessageCard({
 
 		
 	return (
-		<>					
+		<>
 			{/* // 👇把其他所有 ...rest 属性交给 StyleMessageCard 
 			//先定义数据状态 + 定义样式 */}
-			<StyleMessageCard {...rest} active={active}> 
+			<StyledMessageCard active={active} {...rest}> 
 				<Avatar src={avatarSrc} status={avatarStatus}/> 
 				<Name>{name}</Name>
 				<Status>{statusText}</Status>
 				<Time>{time}</Time>
 				<Message replied={replied}>
 					{/* 🚀🚀如果已读，就加载已读的样式（三栏 Grid） */}
-					{ replied && <Icon
+					{ replied && (<Icon
 						icon={Replied}
 						width={16}
 						height={16}
-						color={ active ? theme.inactiveColorDark : theme.inactiveColorNor } //激活状态，则更显示深一点的 icon
-						opacity={ active ? 0.4 : 1}
+						color={ active ? theme.inactiveColorDark : theme.inactiveColor } //激活状态，则更显示深一点的 icon 颜色
+						opacity={ active ? 0.6 : 1}
 						style={{
 							justifyContent: 'start', //靠左对齐（在网格内）
 						}}
-					/>}
+					/>)}
 					<MessageText>{message}</MessageText>
 					<UnreadBadge count={unreadCount}/>
 				</Message>	
-			</StyleMessageCard>
+			</StyledMessageCard>
 		</>
+	
 	)
 }
 
@@ -76,4 +77,5 @@ MessageCard.propTypes = {
 
 
 export default MessageCard
+
 

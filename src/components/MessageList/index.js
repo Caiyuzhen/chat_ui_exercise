@@ -16,7 +16,6 @@ import face1 from 'assets/images/face-male-1.jpg'
 
 // 组装所有组件形成消息列表
 function MessageList({children,...rest}) {
-
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyleMessageList 
 		<StyleMessageList {...rest}> 
