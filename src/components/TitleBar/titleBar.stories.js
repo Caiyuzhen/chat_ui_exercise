@@ -10,7 +10,7 @@ export default {
 export const Default = () => (
 	<TitleBar
 		avatarSrc={face3}
-		name={Jimmy}
+		name='Jimmy'
 		statusText='离线'
 		time='3小时前'
 	/>

@@ -10,7 +10,7 @@ export default {
 
 	gray2: "rgba(241, 237, 237, 0.3)",//输入框背景
 	gray3: "rgba(24, 28, 47, 0.3)",	  //占位符
-	gray4: "#EFECE8",
+	gray4: "#EFECE8",			//边框颜色
 	gray5: "#D8D8D8",
 	grayDark: "181C2F",          //输入框文字
 	darkPurple: '#31306A',       //侧导航紫色
