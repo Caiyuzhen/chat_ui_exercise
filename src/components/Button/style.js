@@ -19,10 +19,10 @@ const StyledButton = styled.button`
 	//过渡动画
 	transform: scale(1);
 	transition: 0.4s;
-	//& 代表上一级选择器
+	//& 代表上一级选择器(或者叫父元素)
 	&:hover{ 
-		transform: scale(1.25);
-		transform: translateY(-6px);
+		transform: scale(1.1);
+		/* transform: translateY(-6px); */
 		box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
 	}
 `;
