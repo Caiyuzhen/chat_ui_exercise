@@ -16,7 +16,7 @@ function ChatBubble({
 		<StyleChatBubble type={type} {...rest}> 
 			<BubbleContainer>
 				<MessageText>{children}</MessageText>
-				<BubbleTip icon={BubbleTipIcon} width={36} height={20} color='white'/>
+				<BubbleTip icon={BubbleTipIcon} width={40} height={20} color='white'/>
 			</BubbleContainer>
 			<Time>{time}</Time>
 		</StyleChatBubble>

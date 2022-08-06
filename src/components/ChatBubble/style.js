@@ -41,8 +41,8 @@ const BubbleContainer = styled.div`
 //气泡尖角
 const BubbleTip = styled(Icon)`//让 BubbleTip 可以传递 icon 属性！
 	position: absolute;
-	bottom:-20%;
-	left:10px;
+	bottom:-14%;
+	left:0px;
 	z-index:5;
 `
 
@@ -58,7 +58,7 @@ const typeVariants = {
 		${BubbleTip}{
 			transform:rotateY(180deg);
 			left:unset;
-			right:10px;
+			right:0px;
 			path {
 				fill:${({theme})=>theme.primaryColor}
 			}
