@@ -28,7 +28,7 @@ function ChatBubble({
 /*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
 ChatBubble.propTypes = {
 	children: PropTypes.any,
-	type:PropTypes.oneOf('mine','other'),
+	type:PropTypes.oneOf('mine'),
 	time: PropTypes.string,
 
 };
