@@ -18,9 +18,16 @@ const Content = styled.div`
 	padding: 12px 30px;
 	position: absolute;
 
-	/* css3 的计算属性 calc()，可以动态计算一些值！！ */
-	bottom:calc(100% + 12px);//100% 表示取 StyledPopover 容器的高度(因为按钮占满了高度，所以也是按钮本身的高度），然后再去 +12px
+	/* css3 的计算属性 calc()，可以动态计算一些值！！ 100% 表示取 StyledPopover 容器的高度(因为按钮占满了高度，所以也是按钮本身的高度），然后再去 +12px */
+	bottom:calc(100% + 12px);
+
+	/*通过 offset 来控制 popover 的偏移量(箭头从左 ｜ 中 ｜ 右 边出来)*/
+	${({offset}) => offset && `transform: translate(${offset.x || 0},${offset.y || 0})`};
+
+	/*通过 visible 属性来判断是否要显示 popover 内容  如果为 false，则隐藏*/
+	${({visible}) => !visible && `display: none`};
 `
+
 
 
 //Popover 的小箭头
@@ -31,14 +38,24 @@ const Triangle = styled.div`
 	height: 0;
 	border-style:solid;
 	border-width: 6px 6px 0 6px; //去掉下边一个点
-	border-color:${({theme})=>theme.background} transparent transparent transparent; //不显示左右跟下边的三角形
-	left: calc(50% - 6px);//三角形居中
-	bottom:calc(100% + 7px);//让三角形贴在 Popover 内容区域的上面，要排除掉自身的高度 6px
-	/* 👆计算方法：
-		100% + 12px -5px 
-		也就是 100% 的高度 + 12px 的 content 偏移高度再 - 5px 的自身高度 （三角形 6px -1px），1px 用来压在 content 区域上
+	border-color:${({theme}) => theme.background} transparent transparent transparent; //不显示左右跟下边的三角形
+
+	//三角形居中
+	left: calc(50% - 6px);
+	/* //让三角形贴在 Popover 内容区域的上面，要排除掉自身的高度 6px
+		👇计算方法：
+			100% + 12px -5px 
+			也就是 100% 的高度 + 12px 的 content 偏移高度再 - 5px 的自身高度 （三角形 6px -1px），1px 用来压在 content 区域上
 	*/
-`;
+	bottom:calc(100% + 12px - 5px);
+
+	//三角形的间隔
+	${({offset}) => offset && `transform: translate(${offset.y || 0})`};
+
+	//通过 visible 属性来判断是否要显示 popover 底部的三角形
+	${({visible}) => !visible && `display: none`};
+`
+
 
 
 //Popover 的目标对象
