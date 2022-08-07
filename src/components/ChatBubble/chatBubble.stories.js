@@ -1,3 +1,4 @@
+import Emoji from "components/Emoji"
 import VoiceMessage from "components/VoiceMessage"
 import React from "react";
 import ChatBubble from ".";
@@ -20,7 +21,15 @@ export const OthersChat = () => (
 
 export const MyChat = () => (
 	// 这里的内容就是 children 属性！！
-	<ChatBubble type='mine' time='Yesterday 14:00'>这是一条他人发送的消息</ChatBubble>
+	<ChatBubble type='mine' time='Yesterday 14:00'>这是一条我发送的消息</ChatBubble>
+)
+
+
+export const MyChatWithEmoji = () => (
+	// 这里的内容就是 children 属性！！
+	<ChatBubble type='mine' time='Yesterday 14:00'>
+		这是一条我发送的带 emoji 的消息<Emoji label='smile'>😄</Emoji>
+	</ChatBubble>
 )
 
 

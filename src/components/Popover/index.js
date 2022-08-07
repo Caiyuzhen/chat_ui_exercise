@@ -10,7 +10,7 @@ function Popover({
 	content,   //Popover 内的内容，可以是文本、其他组件
 	offset,    //指向的偏移位置
 	children,
-	onVisiable, //额外的属性，当 Popover 显示时触发，可以做进一步的动作
+	onVisible, //额外的属性，当 Popover 显示时触发，可以做进一步的动作
 	onHide,		//额外的属性，当 Popover 显示时触发，可以做进一步的动作
 	...rest}
 	) {
@@ -24,10 +24,13 @@ function Popover({
 	const handleClick = () => {
 		if(visible === true){
 			setVisible(false)
-			onHide && onHide() //进一步的方法（可选）
+			onHide && onHide() //进一步的方法（可选）, 表示如果有 onHide 属性，就会变为 true，就会执行 onHide() 方法
+			// console.log(visible)
+			// 比如在 footer 跟 useState() 来配合，当 icon 点击后去更改 icon 的颜色：onVisible={() => setEmojiIconActive(true)} 
+
 		} else {
 			setVisible(true)
-			onVisiable && onVisiable() //进一步的方法（可选）
+			onVisible && onVisible() //进一步的方法（可选）, 表示如果有 onVisible 属性，就会变为 true，就会执行 onVisible() 方法
 		}
 	}
 

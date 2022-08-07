@@ -12,7 +12,7 @@ const StyledPopover = styled.div`
 
 //Popover 内的内容,内容设置为绝对定位，方便定位距离
 const Content = styled.div`
-	background-color: ${({theme})=>theme.background};
+	background-color: ${({theme}) => theme.background};
 	border-radius: 12px;
 	box-shadow: 0 8px 40px rgba(0,0,0,.12);
 	padding: 12px 30px;
