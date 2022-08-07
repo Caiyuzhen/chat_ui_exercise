@@ -36,7 +36,7 @@ function Popover({
 
 
 	return (
-		// 👇把其他所有 ...rest 属性交给 StylePopover 
+		// 👇这里的 handleClick	事件相当于让整个组件可以点击了
 		<StylePopover {...rest} onClick={handleClick}> 
 			{/* Popover 的内容，可以是文本、其他组件比如图片等 */}
 			<Content offset={offset} visible={visible}>

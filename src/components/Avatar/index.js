@@ -23,7 +23,7 @@ function Avatar({//🔥🔥🔥解构出 Avatar 的四种属性状态 props 并�
 		<AvatarClip size={size}>
 			{/* 头像 */}
 			{/* 在 jsx 中写 js 表达式需要用大括号 */}
-			<AvatarImage src={src} alt="" />
+			<AvatarImage src={face1} alt="" />
 		</AvatarClip>
 	</StyleAvatar>
 	)
