@@ -32,6 +32,8 @@ function Profile({
 			{/* 个性签名 */}
 			<Paragraph size='medium' >{signature}</Paragraph>
 
+		
+
 			
 		</StyleProfile>
 	)

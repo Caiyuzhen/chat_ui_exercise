@@ -26,6 +26,13 @@ function Icon({
 
 
 
+//⚡️⚡️⚡️⚡️把 SocialIcon 导出为 Icon 的子组件！
+//导出后通过 Social 的原型链就能访问到！
+Icon.Social = SocialIcon
+
+
+
+
 /*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
 Icon.propTypes = {
 	icon: PropTypes.element,
