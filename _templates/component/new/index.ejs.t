@@ -7,17 +7,17 @@ to: src/components/<%= name %>/index.js
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import Style<%= name %> from './style'
+import Styled<%= name %> from './style'
 
 
 
 function <%= name %>({children,...rest}) {
 
 	return (
-		// 👇把其他所有 ...rest 属性交给 Style<%= name %> 
-		<Style<%= name %> {...rest}> 
+		// 👇把其他所有 ...rest 属性交给 Styled<%= name %> 
+		<Styled<%= name %> {...rest}> 
 			{children}
-		</Style<%= name %>>
+		</Styled<%= name %>>
 	)
 }
 

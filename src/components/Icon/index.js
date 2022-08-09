@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import StyleIcon from './style'
+import SocialIcon from './SocialIcon'
 
 
 
@@ -9,8 +10,8 @@ IconComponent 为别名，width 跟 height 不带单位，因为 svg 没有单�
 */
 function Icon({
 	icon: IconComponent, 
-	width = 24, 
-	height = 24, 
+	width = 24,  // 默认宽度参数
+	height = 24, //默认高度的参数
 	color, 
 	opacity, 
 	...rest}) {
@@ -27,7 +28,7 @@ function Icon({
 
 
 //⚡️⚡️⚡️⚡️把 SocialIcon 导出为 Icon 的子组件！
-//导出后通过 Social 的原型链就能访问到！
+//导出后通过 Social 的原型链就能访问到社交 Icon！！！
 Icon.Social = SocialIcon
 
 

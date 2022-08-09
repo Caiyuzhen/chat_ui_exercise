@@ -13,5 +13,18 @@ const StyledProfile = styled.div`
 `;
 
 
+const StyledSocialLinks = styled.div`
+	//整组按钮的布局
+	& {
+		display: flex;
+	}
+	//全部子按钮的布局
+	& > * {
+		margin: 20px 8px;
+	}
+`
 
-export default StyledProfile;
+
+
+export default StyledProfile
+export {StyledSocialLinks}

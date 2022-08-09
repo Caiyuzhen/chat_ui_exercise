@@ -8,13 +8,18 @@ export default {
 	component: Button
 };
 
-export const RectButton = () => 
-	<Button type='primary' shape='square' size='30px'>圆角按钮</Button>
+export const RectButtonAuto = () => 
+	<Button type='primary' shape='square'>圆角按钮</Button>
+
+
+export const RectButtonFixed = () => 
+	<Button type='primary' shape='squareFixed' width='120px' height='32px'>圆角按钮</Button>
 
 
 export const CircleButton = () => 
 	<Button type='primary' shape='circle' size='60px'>
 		{/* icon 内部形状的尺寸 */}
-		<Icon icon={Plus} height={16} weight={16}></Icon>
+		<Icon icon={Plus} size={16} weight={16}></Icon>
 	</Button>
+	
 	

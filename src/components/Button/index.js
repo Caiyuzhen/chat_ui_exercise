@@ -1,26 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyleButton from './style'
+import StyledButton from './style'
 
 
 
 function Button({
 		type='primary',  //颜色
 		shape='square',  //造型
-		size='30px',	 //尺寸
+		size='30px',	 //长宽固定尺寸
+		width='88px',	 //按钮宽度
+		height='32px',	 //按钮高度
 		bgColor,  		//背景色
 		...rest}) {
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyleButton 
-		<StyleButton 
+		<StyledButton 
 			type={type} 
 			shape={shape} 
 			size={size} 
-			color={bgColor} 
+			width={width}
+			height={height}
+			bgColor={bgColor} 
 			{...rest }> 
-			
-		</StyleButton>
+		</StyledButton>
 	)
 }
 
@@ -32,6 +35,8 @@ Button.propTypes = {
 	type: PropTypes.oneOf(['primary']),
 	shape: PropTypes.oneOf(['circle', 'square']),
 	size: PropTypes.string,
+	width: PropTypes.string,
+	height: PropTypes.string,
 };
 
 

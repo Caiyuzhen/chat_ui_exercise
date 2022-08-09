@@ -3,6 +3,7 @@ import Icon from ".";
 import { ReactComponent as SmileIcon } from 'assets/icons/smile.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faFolder } from '@fortawesome/free-solid-svg-icons';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,7 +27,7 @@ export const CustomColor = () => {
 export const CustomSizeColors = () => {
 	return <Icon 		
 	          icon={SmileIcon}
-			  color="#3370FF"
+			  color="#333333"
 			  width={48}
 			  height={48}
 			/>;
@@ -46,5 +47,19 @@ export const FontAwesomeSizes = () => {
 	     	<FontAwesomeIcon icon={faFolder} style={{color:'#3370FF'}} fontSize={48}/>
 			 <FontAwesomeIcon icon={faCoffee} style={{color:'#3370FF'}} fontSize={64}/>
 		</>
+	)
+}
+
+
+export const SocialMedia = () => {
+	return(
+		<Icon.Social 
+			icon={faTwitter}
+			// color="#3370FF"	
+			bgColor="3370FF"
+			width={48}
+			height={48}
+			href='http://www.twitter.com'
+		/>
 	)
 }
