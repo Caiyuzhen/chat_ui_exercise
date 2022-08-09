@@ -3,38 +3,36 @@ import PropTypes from 'prop-types'
 import StyleProfile from './style'
 import Paragraph from 'components/Paragraph'
 import Avatar from 'components/Avatar'
+import face4 from 'assets/images/face-male-4.jpg'
 import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
 
 
 
 function Profile({
-	src,	   	  //Avatar头像地址
-	status,	   	  //用户状态
-	statusIconSize,	//用户状态图标大小
-	nickName,    	//昵称
+	name,         //用户名
 	area,  	     //地区
-	signature,   //签名
+	signature,   //个性签名
 	children,
 	...rest
 	}) {
 
 	return (
-
-		// 👇把其他所有 ...rest 属性交给 StyleProfile 
-
-		<StyleProfile {...rest}> 
+		<StyleProfile {...rest}> 		
 			<Avatar 
-				src={src} 
-				status={status}
-				css={`margin" 26px 0;`}
-				statusIconSize={statusIconSize}
+				src={face4}
+				status='online'
+				size='120px'
+				statusIconSize='20px'
+				css={`margin-bottom: 24px;`}
 				/>
-			<Paragraph size='xxlargeFont' >
-				{nickName}
-			</Paragraph>
-			<Paragraph size='xxlargeFont' >
-				{signature}
-			</Paragraph>
+			{/* 名字, 用 css 的 macro 方法来更改 Paragraph 组件内的样式！！ */}
+			<Paragraph size='xlarge' css={`margin-bottom:12px; font-weight:600;`}>{name}</Paragraph>
+			{/* 地区 */}
+			<Paragraph type='secondary' css={`margin-bottom:8px;`}>{area}</Paragraph>
+			{/* 个性签名 */}
+			<Paragraph size='medium' >{signature}</Paragraph>
+
+			
 		</StyleProfile>
 	)
 }

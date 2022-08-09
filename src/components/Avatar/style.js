@@ -59,7 +59,7 @@ const StatusIcon = styled.div`
 
 
 
-//头像蒙板
+//头像宽高蒙板
 const AvatarClip = styled.div`
 	width:${ ( {size} ) => size }; //传入的是在 index.js 中被解构出来的属性！！
 	height:${ ( {size} ) => size };	//传入的是在 index.js 中被解构出来的属性！！
@@ -68,7 +68,7 @@ const AvatarClip = styled.div`
 `
 
 
-//头像图片(让头像适应蒙版的宽高)
+//头像图片, 使用 img 标签！然后让头像适应蒙版的宽高
 const AvatarImage = styled.img`
 	width:100%;
 	height:100%;

@@ -4,6 +4,7 @@ import styled, {css} from "styled-components";
 
 
 //⚡️⚡️⚡️注意，这样 Pararagph 就等同于 Text，能够自由的设置字体大小了，并且还具备折行或...的能力！！
+//让 Paragraph 集成 Text 的属性
 const StyledParagraph = styled(StyledText)`//🔥🔥继承 Text 组件的 样式组件！！并进行修改
 	//判断是否显示省略号
 	${( {ellipsis})=>

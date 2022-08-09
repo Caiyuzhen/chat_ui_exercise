@@ -7,4 +7,10 @@ export default {
 };
 
 
-export const Default = () => <Profile/>
+export const Default = () => (
+	<Profile
+		name='Amy Wang'
+		area='Hong Kong'
+		signature='Keep on going never give up 🚀.'
+	/>
+)
