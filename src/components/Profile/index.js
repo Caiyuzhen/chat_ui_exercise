@@ -1,19 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyledProfile, { StyledContactSections, StyledSocialLinks } from './style'
+import StyledProfile, { AlbumSection, AlbumTitle, PhotoImg, Album, StyledContactSections, StyledSocialLinks, CloseIcon } from './style'
 import Paragraph from 'components/Paragraph'
 import Text from 'components/Text'
 import Avatar from 'components/Avatar'
 import face4 from 'assets/images/face-male-4.jpg'
 import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
-import {faTwitter,
-		faTumblr,
-		faReddit,
-		faGithub,
-		faLinkedin,
-	    } from '@fortawesome/free-brands-svg-icons'
+import {faTwitter,faTumblr,faReddit,faGithub,faLinkedin,} from '@fortawesome/free-brands-svg-icons'
 import Icon from 'components/Icon'
 import Sperator from 'components/Sperator'
+import photo1 from 'assets/images/photo1.jpg';
+import photo2 from 'assets/images/photo2.jpg';
+import photo3 from 'assets/images/photo3.jpg';
+import { ReactComponent as Cross } from 'assets/icons/cross.svg'
+
+
 
 
 //🌟Profile 组件
@@ -26,7 +27,9 @@ function Profile({
 	}) {
 
 	return (
-		<StyledProfile {...rest}> 		
+		<StyledProfile {...rest}> 	
+			{/* 在 styled 内已经包裹了 Icon，可以直接传入 svg */}
+			<CloseIcon icon={Cross}/>	
 			<Avatar 
 				src={face4}
 				status='online'
@@ -69,18 +72,42 @@ function Profile({
 			{/* 分割线 */}
 			<Sperator
 				css={`
-					margin: 24px;
+					margin: 16px;
 				`}/>
-			{/* 【样式组件】包裹【描述信息功能组件】 */}
+			{/* 用【样式组件】包裹【描述信息功能组件】 */}
 			<StyledContactSections>
-				<Description label='联系电话'> 852-2345-6789 </Description>
-				<Description label='电子邮件'> admin@Tx.com </Description>
-				<Description label='个人网站'> https://www.amy.com </Description>
+				<Description label='Connext Phone'> 852-2345-6789 </Description>
+				<Description label='Email Address'> admin@Tx.com </Description>
+				<Description label='Personal Address'> https://www.amy.com </Description>
 			</StyledContactSections>
+
+			{/* 分割线 */}
+			<Sperator
+				css={`
+					margin: 16px;
+				`}/>
+
+			{/* 照片墙*/}
+			<AlbumSection>
+				<AlbumTitle>
+					<Text type="secondary">Album（31）</Text>
+					<a>More</a>
+				</AlbumTitle>
+				<Album>
+					<PhotoImg src={photo1} alt="" />
+					<PhotoImg src={photo2} alt="" />
+					<PhotoImg src={photo3} alt="" />
+				</Album>
+			</AlbumSection> 
+
+
+
 
 		</StyledProfile>
 	)
 }
+
+
 
 
 
@@ -94,6 +121,7 @@ function Description ({label, children}){
 		</Paragraph>
 	)
 }
+
 
 
 
