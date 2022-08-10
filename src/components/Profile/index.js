@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyledProfile, { StyledSocialLinks } from './style'
+import StyledProfile, { StyledContactSections, StyledSocialLinks } from './style'
 import Paragraph from 'components/Paragraph'
+import Text from 'components/Text'
 import Avatar from 'components/Avatar'
 import face4 from 'assets/images/face-male-4.jpg'
 import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
@@ -12,9 +13,10 @@ import {faTwitter,
 		faLinkedin,
 	    } from '@fortawesome/free-brands-svg-icons'
 import Icon from 'components/Icon'
+import Sperator from 'components/Sperator'
 
 
-
+//🌟Profile 组件
 function Profile({
 	name,         //用户名
 	area,  	     //地区
@@ -64,9 +66,36 @@ function Profile({
 					href='https://reddit.com/'
 				/>
 			</StyledSocialLinks>
+			{/* 分割线 */}
+			<Sperator
+				css={`
+					margin: 24px;
+				`}/>
+			{/* 【样式组件】包裹【描述信息功能组件】 */}
+			<StyledContactSections>
+				<Description label='联系电话'> 852-2345-6789 </Description>
+				<Description label='电子邮件'> admin@Tx.com </Description>
+				<Description label='个人网站'> https://www.amy.com </Description>
+			</StyledContactSections>
+
 		</StyledProfile>
 	)
 }
+
+
+
+//🌟描述信息组件
+//label 是标签， children 是具体的内容
+function Description ({label, children}){
+	return(
+		<Paragraph>
+			<Text type='secondary'>{label}:</Text>
+			<Text>{children}</Text>
+		</Paragraph>
+	)
+}
+
+
 
 
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//整体 profile 的样式
 const StyledProfile = styled.div`
 	display: grid;
 	align-content: start; //水平靠上对齐
@@ -13,6 +14,7 @@ const StyledProfile = styled.div`
 `;
 
 
+//社交组件的样式
 const StyledSocialLinks = styled.div`
 	//整组按钮的布局
 	& {
@@ -25,6 +27,13 @@ const StyledSocialLinks = styled.div`
 `
 
 
+//描述信息的样式
+const StyledContactSections = styled.section`
+	display: grid;
+	grid-gap: 4px;
+`
+
+
 
 export default StyledProfile
-export {StyledSocialLinks}
+export { StyledSocialLinks,StyledContactSections }
