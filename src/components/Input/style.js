@@ -9,7 +9,7 @@ const InputContainer = styled.div`
 	padding:0px 30px;
 `
 
-//输入框
+//输入区域
 const StyledInput = styled.input`
 	width: 100%;//输入区域占满容器的父级
 	height:48px;

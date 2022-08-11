@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import StyledLabelContainer from './style'
+import Text from 'components/Text'
 
 
-//专门用来布局的组件
+//专门用来布局的组件（上下排列的输入列表，包含标题跟输入框）
 function LabelContainer({children,label,...rest}) {
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledLabelContainer 
 		<StyledLabelContainer {...rest}> 
-			{children}
+			{/* 👇有 label 就显示 label，无则不显示 */}
+			{ label && <Text style={{marginBottom: '8px'}}> {label} </Text>}
+			{ children }
 		</StyledLabelContainer>
 	)
 }
