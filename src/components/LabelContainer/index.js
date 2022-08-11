@@ -10,8 +10,8 @@ function LabelContainer({children,label,...rest}) {
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledLabelContainer 
 		<StyledLabelContainer {...rest}> 
-			{/* 👇有 label 就显示 label，无则不显示 */}
-			{ label && <Text style={{marginBottom: '8px'}}> {label} </Text>}
+			{/* 👇有 label 就显示 label: , 无则不显示 */}
+			{ label && <Text style={{marginBottom: '12px'}}> {label}: </Text>}
 			{ children }
 		</StyledLabelContainer>
 	)

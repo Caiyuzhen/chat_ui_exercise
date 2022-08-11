@@ -4,6 +4,8 @@ import StyledInput, { InputContainer, Prefix, Surfix } from './style'
 import Icon from 'components/Icon'
 import { ReactComponent as SearchIcon } from 'assets/icons/search.svg'
 import { useTheme } from 'styled-components'
+import InputText from './InputText'
+
 
 
 
@@ -41,8 +43,12 @@ function Search({placeholder='请输入搜索内容...', ...rest}) {//如果 res
 
 
 
-//🔥🔥🔥把 Input 组件当作 Search 组件的子组件！！
+//🔥🔥🔥把 Search 组件当作 Input 组件的子组件！！
 Input.Search = Search
+
+
+//🔥🔥🔥把 InputText 组件当作 Input 组件的子组件！！
+Input.Text = InputText
 
 
 

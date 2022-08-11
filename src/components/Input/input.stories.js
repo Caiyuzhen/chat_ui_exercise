@@ -26,3 +26,14 @@ export const withAllIcons = () => (
 		rightIcon={<Icon icon={SmileIcon} color="#3370ff"/>}
 	/>
 )
+
+
+
+//带 Title 的输入框
+export const InputTextWithLabel = () =>
+	<Input.Text label='Nickname'/>
+
+
+//不带 Title 的输入框的
+export const InputTextWithoutLabel = () =>
+	<Input.Text />

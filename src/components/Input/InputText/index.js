@@ -19,6 +19,7 @@ function InputText({
 			{/* 
 				👉👉如果有传入 labe 则显示包含标题的 LabelContainer 
 				👉👉如果没有传入 label 则只显示上面那个 input 输入框
+					👇相当于用排版组件，把标题夹到 input 内
 			*/}
 			{label ? <LabelContainer label={label}> {input} </LabelContainer> : input}
 		</StyledInputText>
@@ -29,7 +30,9 @@ function InputText({
 
 /*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
 InputText.propTypes = {
-	children: PropTypes.any
+	children: PropTypes.any,
+	label: PropTypes.string,
+	placeholder: PropTypes.string,
 };
 
 
