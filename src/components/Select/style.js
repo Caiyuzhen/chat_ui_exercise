@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import CaretDown from "assets/icons/caret_down.svg"
+import CaretDown2 from "assets/icons/caretDown2.svg";
+
+
+//下拉菜单的 icon 变体
+const typeVariants = {
+	form: css`
+		background-image :url(${CaretDown2});
+	`,
+};
+
 
 
 
@@ -25,8 +35,10 @@ const StyledSelect = styled.select`
 	font-size:${ ({theme})=>theme.smallFont };
 	color: ${ ({theme})=>theme.grayDark };
 
+	//根据 type 来显示下拉菜单的样式，有 type 则为另一种样式
+	${({type}) => type && typeVariants[type]} //有则显示
 
-	//隐藏下拉菜单图标
+	//隐藏下拉菜单的默认图标
 	::-ms-expand {
 		display: none;
 	}
