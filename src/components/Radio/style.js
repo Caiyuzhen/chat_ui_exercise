@@ -53,13 +53,13 @@ const RadioButton = styled.input.attrs({type: "radio"})`//让输入框变成 Rad
 	opacity: 0;
 
 	//🌈🌈🌈 用 checked 伪类加上【 + 】这一邻居选择器来把 Circle 改成选中的样式
-	//有个大坑！ checked  +  临近选择器跟图层有关系，要放在  Circle 的下面！！！！
+	//🔥🔥有个大坑！ checked  +  临近选择器跟图层有关系，要放在  Circle 的下面！！！！
 	:checked + ${Circle}::after{
 		opacity: 1;
 		transform: scale(1);
 	}
 	
-	//🌈🌈🌈 未选中的状态，not 为取反
+	//🌈🌈🌈 未选中的状态，not 为取反，反选伪类
 	:not(:checked) + ${Circle}::after{
 		opacity: 0;
 		transform: scale(0);
@@ -67,11 +67,22 @@ const RadioButton = styled.input.attrs({type: "radio"})`//让输入框变成 Rad
 `
 
 
+//RadioGroup 的样式
+const StyledRadioGroup = styled.div`
+	display: flex;
+	& > *:not(:first-child){
+		margin-left: 24px;
+	}
+`
 
 
 
+
+/* css 样式 ： 
+	input:checked {...} 
+*/
 
 
 
 export default StyledRadio;
-export {RadioButton, Circle};
+export {RadioButton, Circle, StyledRadioGroup};
