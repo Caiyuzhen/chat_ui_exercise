@@ -6,4 +6,4 @@ export default {
 	component: Option
 };
 
-export const Default = () => <Option>默认</Option>
+export const Default = () => <Option>这是一个默认的选项</Option>
