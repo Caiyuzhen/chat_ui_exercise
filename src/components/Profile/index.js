@@ -104,9 +104,9 @@ function Profile({
 				`}/>
 			{/* 用【样式组件】包裹【描述信息功能组件】 */}
 			<StyledContactSections>
-				<Description label='Connext Phone'> 852-2345-6789 </Description>
-				<Description label='Email Address'> admin@Tx.com </Description>
-				<Description label='Personal Address'> https://www.amy.com </Description>
+				<Description label='Phone number'> 852-2345-6789 </Description>
+				<Description label='Email address'> admin@Tx.com </Description>
+				<Description label='Personal Website'> https://www.amy.com </Description>
 			</StyledContactSections>
 
 			{/* 分割线 */}
