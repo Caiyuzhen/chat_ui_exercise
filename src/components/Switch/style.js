@@ -22,7 +22,7 @@ const Slider = styled.span`
 	bottom: 0;
 	border-radius: 16px;
 	transition: .4s;
-
+	/* Switch 上方的小圆点 */
 	&::before{
 		display: block;
 		content: '';
@@ -42,8 +42,20 @@ const Slider = styled.span`
 `
 
 
-//实际控制 Switch 的 checkbox
-const Checkbox = styled.input.attrs({type: "checkbox"})``
+//🔥🔥🔥实际控制 Switch 的 checkbox , 本质上是利用 checkbox 的开关去控制自定义的样式！！
+const Checkbox = styled.input.attrs({type: "checkbox"})`
+	width: 0;
+	height:0;
+	opacity: 0;
+	/* 选中时改变背景色为蓝色*/
+	:checked + ${Slider}{
+		background-color:${({theme}) => theme.primaryColor};
+		/* Switch 上方的小圆点 */
+		::before{
+			transform: translate(22px);
+		}
+	}
+`
 
 
 

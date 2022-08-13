@@ -6,6 +6,7 @@ export default {
 	component: Emoji
 };
 
+
 /* eslint-disable jsx-a11y/accessible-emoji */
 export const Default = () => (
 	<div>
@@ -13,4 +14,4 @@ export const Default = () => (
 		<Emoji label='apple'>🍎</Emoji>
 		<Emoji label='fish'>🐟</Emoji>
 	</div>
-)
+) 

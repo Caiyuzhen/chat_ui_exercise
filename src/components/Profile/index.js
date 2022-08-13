@@ -6,22 +6,29 @@ import Text from 'components/Text'
 import Avatar from 'components/Avatar'
 import face4 from 'assets/images/face-male-4.jpg'
 import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
-import {faTwitter,faTumblr,faReddit,faGithub,faLinkedin,} from '@fortawesome/free-brands-svg-icons'
+import {faTwitter,faTumblr,faReddit,faGithub,faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import Icon from 'components/Icon'
 import Sperator from 'components/Sperator'
 import photo1 from 'assets/images/photo1.jpg';
 import photo2 from 'assets/images/photo2.jpg';
 import photo3 from 'assets/images/photo3.jpg';
 import { ReactComponent as Cross } from 'assets/icons/cross.svg'
+import Button from 'components/Button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
 
 //🌟Profile 组件
 function Profile({
-	name,         //用户名
-	area,  	     //地区
-	signature,   //个性签名
+	showEditBtn,  		//编辑态的按钮
+	showCloseIcon=true,//关闭按钮,默认显示
+	onEdit,		 		//点击编辑按钮后要做的进一步动作,点击后进行回调
+	status,	     		//是否显示在线状态
+	name,         		//用户名
+	area,  	     		//地区
+	signature,   		//个性签名
 	children,
 	...rest
 	}) {
@@ -29,15 +36,36 @@ function Profile({
 	return (
 		<StyledProfile {...rest}> 	
 			{/* 在 styled 内已经包裹了 Icon，可以直接传入 svg */}
-			<CloseIcon icon={Cross}/>	
+			{showCloseIcon && <CloseIcon icon={Cross}/>	}
 			<Avatar 
 				src={face4}
-				status='online'
+				status={status}
 				size='120px'
 				statusIconSize='20px'
-				css={`margin-bottom: 24px;`}
+				css={`
+					margin-bottom: 24px;
+					/* 因为 profile 是 grid 布局，因此可以规定头像、编辑按钮占据的【行号跟列号】 */
+					grid-area: 1 / 1 / 3 / 2;//开始行  开始列  结束行  结束列 (相当于占据 2 行 1 列)
+					`}
 				/>
-			{/* 名字, 用 css 的 macro 方法来更改 Paragraph 组件内的样式！！ */}
+			{/* 👇是否显示头像的编辑按钮 */}
+			{onEdit && 
+				<Button 
+					size='48px' 
+					shape='circle' 
+					onClick={onEdit} //点击后就触发 onEdit 的回调,进入编辑态
+					css={`
+						//修改 ✏️编辑 按钮的位置
+						grid-area: 1 / 1 / 3 / 2;//开始行  开始列  结束行  结束列 (相当于占据 2 行 1 列)
+						align-self: end;
+						margin-left: 80px;
+						margin-bottom:8px;
+						z-index:10;
+					`}
+					>
+					<FontAwesomeIcon css={`font-size:20px;`} icon={faPen}/>
+				</Button>}
+			{/* 用户名, 用 css 的 macro 方法来更改 Paragraph 组件内的样式！！ */}
 			<Paragraph size='xlarge' css={`margin-bottom:8px; font-weight:600;`}>{name}</Paragraph>
 			{/* 地区 */}
 			<Paragraph type='secondary' css={`margin-bottom:12px;`}>{area}</Paragraph>

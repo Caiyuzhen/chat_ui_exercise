@@ -6,7 +6,7 @@ import StyleEmoji from './style'
 
 function Emoji({
 		label,  	//让 emoji 变成图片，这样使用阅读器的人就能听到这个 enmoji 的含义
-		children,	//传递具体的 emoji表情
+		children,	//传递具体的 emoji 表情
 		...rest}) {
 
 	return (

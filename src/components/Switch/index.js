@@ -9,7 +9,6 @@ function Switch({children,...rest}) {
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledSwitch 
 		<StyledSwitch {...rest}> 
-			{children}
 			<Checkbox/>
 			<Slider/>
 		</StyledSwitch>
