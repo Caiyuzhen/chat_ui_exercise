@@ -10,8 +10,9 @@ const StyledEditProfile = styled.div`
 	overflow-y: auto;//超出的内容显示垂直滚动条
 `;
 
-//标题
+//标题(🔥🔥每组标题距离上一组内容 40px)
 const GroupTitle = styled(Text).attrs({size: 'large', bold: 'bold'})`
+	margin-top:40px;
 `
 
 //性别与地区的包裹容器
