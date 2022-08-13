@@ -51,8 +51,10 @@ function EditProfile({children,...rest}) {
 				`}>
 				<FontAwesomeIcon icon={faCheck} onClick={ ()=>setShowEdit(false) }/>
 			</Button>
+
+
 			{/* 标题样式 */}
-			<GroupTitle>BaseInfo</GroupTitle>
+			<GroupTitle>Base Info</GroupTitle>
 			<InputText label='NickName'/>
 			<GenderAndRegionContainer>
 				<Radio.Group label='Gender'>
@@ -77,12 +79,17 @@ function EditProfile({children,...rest}) {
 			</GenderAndRegionContainer>
 			{/* 个性签名 */}
 			<InputText label='Personalized Signature'/>
+
+
 			{/* 标题样式 */}
 			<GroupTitle>Contact Info</GroupTitle>
 			<InputText label='Email address'/>
 			<InputText label='Phone number'/>
 			<InputText label='Personal website'/>
+
+
 			{/* 调用下面【编辑态下】的【社交信息组件】 */}
+			<GroupTitle>Social Info</GroupTitle>
 			<SocialIconInput icon={faTwitter} bgColor='#1DA1F2'/>
 			<SocialIconInput icon={faTumblr} bgColor='#36465D'/>
 			<SocialIconInput icon={faReddit} bgColor='#FF4500'/>
