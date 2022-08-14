@@ -61,6 +61,7 @@ const Name = styled(Text).attrs({size:'xxlarge', bold:true})`
 //消息时间
 const Time = styled(Text).attrs({size:'medium', type:'secondary'})`
 	grid-area: time;//让 Time 站在上面的 Grid 的 template 位置
+	justify-self: end;/* 靠网格的右侧对齐 */
 `
 
 //消息状态
