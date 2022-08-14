@@ -16,6 +16,7 @@ function Filter({children,...rest}) {
 
 
 
+
 //⚡️⚡️把 FilterItems 作为 Filter 的子组件来导出
 Filter.FilterItems = ({children, label, ...rest}) => (
 	<FilterItems {...rest}>
@@ -24,6 +25,9 @@ Filter.FilterItems = ({children, label, ...rest}) => (
 	</FilterItems>
 )
 
+
+
+//⚡️⚡️把 Action 作为 Filter 的子组件来导出
 Filter.Action = ({children, label, ...rest}) => (
 	<Action {...rest}>
 		{/* 🪵🪵注意，这里调用了组件，所以在 style.js 内要更改样式得用 ${StyledText}{} 并进行 import！！！ */}
