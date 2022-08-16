@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import StyledFileCard, { FileIcon, FileName, Options, Time } from './style'
+import StyledFileCard, { FileIcon, FileName, FileSize, Options, Time } from './style'
 import { ReactComponent as FileExcel} from 'assets/icons/fileExcel.svg'
 import { ReactComponent as FileImage} from 'assets/icons/fileImage.svg'
 import { ReactComponent as FilePdf} from 'assets/icons/filePdf.svg'
@@ -33,7 +33,8 @@ function FileCard({
 		<StyledFileCard {...rest}> 
 			<FileIcon icon={fileIcons.zip}/>
 			<FileName>Design Document files</FileName>
-			<Options> <Icon icon={OptionIcon}/></Options>
+			<FileSize> 2.6Mb </FileSize>
+			<Options> <Icon icon={OptionIcon} width={20}/></Options>
 			<Time> 2022-08-08 </Time>
 		</StyledFileCard>
 	)
