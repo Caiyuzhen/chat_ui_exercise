@@ -10,11 +10,14 @@ import {card} from "utils/mixin"
 
 const StyledFileCard = styled.div`
 	${ card() }
+	padding: 24px;
+
 	display: grid;
 	grid-template-areas:
 		'icon name options'
 		'icon size time';
 	grid-template-columns: 60px 1fr 1fr;
+	
 	transition: all 0.3s ease-in-out;
 	&:hover{
 		box-shadow: 0px 20px 50px rgba(0,0,0,0.15);
