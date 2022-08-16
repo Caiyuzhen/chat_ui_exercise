@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import StyledEditProfile, { GenderAndRegionContainer, GroupTitle, SelectGroup, StyledSocialIconInput} from './style'
 import Profile from 'components/Profile'
 import Avatar from 'components/Avatar'
-import face1 from 'assets/images/face-female-1.jpg'
+import face2 from 'assets/images/face-female-2.jpg'
 import Button from 'components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -34,7 +34,7 @@ function EditProfile({children,...rest}) {
 	return (
 		<StyledEditProfile {...rest}> 
 			<Avatar 
-				src={face1} 
+				src={face2} 
 				size='160px'
 				css={`
 					grid-area: 1 / 1 / 2 / 2; 

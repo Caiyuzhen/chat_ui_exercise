@@ -21,7 +21,7 @@ const StyledButton = styled.button`
 	
 
 	
-	//过渡动画
+	//🔥🔥🔥整体加个过渡动画,后续组件的复用都能继承这个动画！
 	transform: scale(1);
 	transition: 0.4s;
 	//& 代表上一级选择器(或者叫父元素)
