@@ -49,7 +49,12 @@ const ActionGroup = styled.div`
 
 //具体的每个按钮
 const Action = styled(Button).attrs({size:'64px'})`
+	font-size: 32px;
+	color: white;
+	box-shadow: none;
 
+	//🔥🔥🔥判断是否是挂断状态记得要传入 {theme,type} 两个参数！！
+	background: ${({theme, type}) => type === 'hangOff' ? theme.red2 : theme.grayDark2 };
 `
 
 
@@ -61,7 +66,17 @@ const Self = styled(Avatar)`
 `
 
 
+//🪟最小化的浮窗布局样式
+const VideoCallAlert = styled.div`
+	display: grid;
+	grid-template-areas:
+		'avatar info info'
+		'avatar action icon';
+	row-gap: 8px;
+`
+
+
 
 
 export default StyledVideoCall;
-export {ActionGroup, Action, Minimize, Self};
+export {ActionGroup, Action, Minimize, Self, VideoCallAlert};

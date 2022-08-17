@@ -9,7 +9,6 @@ import FileCard from 'components/FileCard'
 function FileList({children,...rest}) {
 
 	return (
-		
 		<StyledFileList {...rest}> 
 			<FilterList filterLabel='排序方式' options={['按最新文件','按文件名倒序']}>
 				<Files>

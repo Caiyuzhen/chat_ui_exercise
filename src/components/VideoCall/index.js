@@ -1,13 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import StyledVideoCall, { Action, ActionGroup, Minimize, Self } from './style'
+import StyledVideoCall, { Action, ActionGroup, Minimize, Self, VideoCallAlert } from './style'
 import {faCompressAlt,faMicrophone,faPhoneSlash,faVolumeMute,faVideo,} from "@fortawesome/free-solid-svg-icons";
 import videoCaller from 'assets/images/videoCaller.jpg'
 import face1 from 'assets/images/face-male-1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Avatar from 'components/Avatar'
+import Paragraph from 'components/Paragraph'
 
 
 function VideoCall({children,...rest}) {
+
+	const [fullScreen, SetScreen] = useState(false) //默认为 false, 渲染为全屏状态
+
+	if(fullScreen){//如果为 true, 则渲染为小窗状态
+		return (
+			<VideoCallAlert>
+				<Avatar src={face1}/>
+				<Paragraph>正在跟 XXX 进行通话</Paragraph>
+				<Paragraph type='secondary'>点击切换为全屏模式</Paragraph>
+				<FontAwesomeIcon icon={faVideo}/>
+			</VideoCallAlert>
+		)
+	}
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledVideoCall 
