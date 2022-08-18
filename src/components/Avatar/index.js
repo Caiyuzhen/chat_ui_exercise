@@ -6,7 +6,7 @@ import { AvatarClip, AvatarImage, StatusIcon, StyleAvatar } from './style'
 
 
 function Avatar({//🔥🔥🔥解构出 Avatar 的四种属性状态 props 并传入函数, 注意，下面比如 <AvatarClip size={size}> 这样绑定后，🌟🌟🌟 元素的 CSS 就能直接访问到 Props 的状态！！！
-		src, 
+		src= face1,         //默认头像
 		size="48px", 		 //默认值
 		status, 
 		statusIconSize="8px", //默认值

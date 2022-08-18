@@ -88,7 +88,7 @@ const VideoCallAlert = styled.div`
 	border-radius: 12px;
 	z-index: 200;
 	${card};
-	draggable="true";
+	draggable:"true";
 `
 
 
