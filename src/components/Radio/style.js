@@ -35,9 +35,8 @@ const Circle = styled.span`
 		position: absolute;
 		left:2px;
 		top:2px;
-
-		//未选中状态
-		opacity:0;
+		//显现缩放的动效
+		/* opacity:0; */
 		transition: 0.2s ease;
 		transform: scale(0);
 	}
@@ -46,7 +45,7 @@ const Circle = styled.span`
 
 
 
-//Radio 圆圈 + 文字 的整体按钮, 用下面自定义的 Circle 来替代原生的 Radio 样式
+//Radio 圆圈 + 文字 的整体按钮, 用下面自定义的 Circle 来替代原生的 input Radio 样式
 const RadioButton = styled.input.attrs({type: "radio"})`//让输入框变成 Radio 的形态
 	width: 0;
 	height: 0;

@@ -37,6 +37,8 @@ function Search({placeholder='请输入搜索内容...', ...rest}) {//如果 res
 				<Icon icon={SearchIcon} color={theme.gray3} width={18} height={18}/>
 			}
 			{...rest}
+			// 因为搜索框要显示在 Feed 内, 所以单独加个投影！
+			style={{boxShadow: '0px 20px 50px rgba(0,0,0,0.15)'}}
 		/>
 	)
 }

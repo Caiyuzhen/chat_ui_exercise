@@ -2,7 +2,7 @@ import Text from "components/Text"
 import Badge from "components/Badge"
 import styled, { css } from "styled-components"
 import { card,activeBar } from "utils/mixin"
-import StyledAvatar from "components/Avatar/style"
+import StyleAvatar from "components/Avatar/style"
 import Paragraph from "components/Paragraph"
 
 
@@ -27,7 +27,7 @@ const StyledMessageCard = styled.div`
 	}
 	
 	//⚡️⚡️单独设置头像的布局！采用引用之前 Avatar 的 StyledAvatar 的方式！！然后添加额外的布局
-	${StyledAvatar}{
+	${StyleAvatar}{
 		grid-area: avatar;//让头像站在上面的 Grid 的 template 位置
 		align-items: center;//头像那一列垂直居中（与名字一起垂直居中，因为头像最大，按最大的去对齐全）
 	}

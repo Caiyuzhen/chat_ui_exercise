@@ -4,6 +4,7 @@ import StyleTitleBar, { Actions, TitleArea } from './style'
 import Avatar from 'components/Avatar'
 import Text from 'components/Text'
 import Icon from 'components/Icon'
+import Dropdown from 'components/Dropdown'
 import { useTheme } from 'styled-components'
 import Paragraph from 'components/Paragraph'
 import { ReactComponent as Call } from 'assets/icons/call.svg'
@@ -22,7 +23,11 @@ function TitleBar({
 		...rest
 	}) {
 	
+	//⚡️⚡️要在 index 内引用 theme 就需要用 useTheme 的 hook
 	const theme = useTheme()
+
+	//下拉菜单的选项
+	const ItemsArr = ['个人资料', '关闭绘画', '屏蔽此人']
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyleTitleBar 
@@ -38,7 +43,9 @@ function TitleBar({
 			<Actions>
 				<Icon icon={Call} color={theme.gray3} opacity={0.8} width={24} height={24}/>
 				<Icon icon={Camera} color={theme.gray3} opacity={0.8} width={24} height={24}/>
-				<Icon icon={Options} color={theme.gray3} opacity={0.8} width={24} height={24}/>
+				{/* ...更多icon */}
+				<Dropdown align='right' content={ItemsArr}/> 
+				{/* <Icon icon={Options} color={theme.gray3} opacity={0.8} width={24} height={24}/> */}
 			</Actions>
 		</StyleTitleBar>
 	)

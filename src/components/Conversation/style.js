@@ -9,7 +9,7 @@ const StyledConversation = styled.div`
 	flex-direction: column; //纵向排列
 	height: 100vh;		//高度占满浏览器
 	padding-bottom:16px;
-	border-radius: 2rem;
+	/* border-radius: 2rem; */
 	background:${({theme}) => theme.background};
 	border: 1px solid ${({theme}) => theme.gray4};
 

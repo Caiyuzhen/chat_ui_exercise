@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { StatusIcon, StyleAvatar } from "components/Avatar/style"
+import StyleAvatar, { StatusIcon } from "components/Avatar/style"
 import styled from "styled-components";
 import { activeBar } from "utils/mixin"
 
