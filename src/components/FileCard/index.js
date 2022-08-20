@@ -15,7 +15,7 @@ import Icon from 'components/Icon'
 //这样可以根据不同的属性去加载不同的图标，更便于统一管理
 const fileIcons = {
 	excel: FileExcel,
-	zip: FileImage,
+	img: FileImage,
 	pdf: FilePdf,
 	ppt: FilePpt,
 	word: FileWord,

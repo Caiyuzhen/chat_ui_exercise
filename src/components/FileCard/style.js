@@ -2,7 +2,7 @@ import Heading from "components/Heading"
 import Icon from "components/Icon"
 import Paragraph from "components/Paragraph"
 import Popover from "components/Popover"
-import styled, { css }  from "styled-components";
+import styled from "styled-components";
 import {card} from "utils/mixin"
 
 
@@ -10,7 +10,7 @@ import {card} from "utils/mixin"
 
 const StyledFileCard = styled.div`
 	${ card() }
-	padding: 24px;
+	padding: 16px;
 
 	display: grid;
 	grid-template-areas:
@@ -27,8 +27,8 @@ const StyledFileCard = styled.div`
 
 
 const FileIcon = styled(Icon).attrs({
-	width: 60,
-	height: 60,
+	width: 54,
+	height: 54,
 })`
 	grid-area: icon;
 	justify-self: start;
@@ -38,19 +38,20 @@ const FileIcon = styled(Icon).attrs({
 const FileName = styled(Heading).attrs({level:2})`
 	grid-area: name;
 	justify-self: start;
-	margin-left: 12px;
+	margin-left: 8px;
 	align-self:center;//垂直居中
-	/* 超过就省略 */
-	/* text-overflow: ellipsis !important;//显示省略号
-	white-space: nowrap;//不换行
-	overflow: hidden;//超出部分隐藏 */
+	/* 👇超过就省略 */
+	width:100%; //grid 布局内要写这个宽度才能出现...！!
+	text-overflow: ellipsis !important;//显示省略号
+	white-space: nowrap; //超出部分隐藏
+	overflow: hidden; //不换行
 	/* min-width: 64px; */
 `
 
 const FileSize = styled(Paragraph).attrs({size:'secondary'})`
 	grid-area: size;
 	justify-self: start;
-	margin-left: 12px;
+	margin-left: 8px;
 	align-self:center;//垂直居中
 `
 

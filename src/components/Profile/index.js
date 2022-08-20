@@ -6,7 +6,7 @@ import Text from 'components/Text'
 import Avatar from 'components/Avatar'
 import face4 from 'assets/images/face-male-4.jpg'
 import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
-import {faTwitter,faTumblr,faReddit,faGithub,faLinkedin} from '@fortawesome/free-brands-svg-icons'
+import {faTwitter,faTumblr,faReddit} from '@fortawesome/free-brands-svg-icons'
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import Icon from 'components/Icon'
 import Sperator from 'components/Sperator'
@@ -40,7 +40,7 @@ function Profile({
 			<Avatar 
 				src={face4}
 				status={status}
-				size='120px'
+				size='80px'
 				statusIconSize='20px'
 				css={`
 					margin-bottom: 24px;
@@ -75,7 +75,7 @@ function Profile({
 				<Icon.Social 
 					shape='squareFixed'
 					height='40px'
-					width='88px'
+					width='78px'
 					icon={faTwitter}
 					bgColor='#1DA1F2'
 					href='https://twitter.com/'
@@ -83,7 +83,7 @@ function Profile({
 				<Icon.Social 
 					shape='squareFixed'
 					height='40px'
-					width='88px'
+					width='78px'
 					icon={faTumblr}
 					bgColor='#36465D'
 					href='https://tumblr.com/'
@@ -91,7 +91,7 @@ function Profile({
 				<Icon.Social 
 					shape='squareFixed'
 					height='40px'
-					width='88px'
+					width='78px'
 					icon={faReddit}
 					bgColor='#FF4500'
 					href='https://reddit.com/'
@@ -119,7 +119,7 @@ function Profile({
 			<AlbumSection>
 				<AlbumTitle>
 					<Text type="secondary">Album（31）</Text>
-					<a>More</a>
+					<a href='https://www.reddit.com/'>More</a>
 				</AlbumTitle>
 				<Album>
 					<PhotoImg src={photo1} alt="" />

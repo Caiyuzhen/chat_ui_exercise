@@ -7,7 +7,6 @@ import Button from 'components/Button'
 import Option from 'components/Option'
 import Icon from 'components/Icon'
 import { ReactComponent as Plus } from 'assets/icons/plus.svg'
-import Input from 'components/Input'
 import MessageCard from 'components/MessageCard'
 import face1 from 'assets/images/face-male-1.jpg'
 import FilterList from 'components/FilterList'
@@ -37,7 +36,7 @@ function MessageList({children,...rest}) {
 							replied={index % 3 ===0}//每隔三个为已回复的状态
 							avatarSrc={face1}
 							name='Alan'
-							avatarStatus='online'
+							statusText='Online'
 							time='8小时之前'
 							message='Four short words sum up what has lifted most successful individuals above the crowd: a little bit more.'
 							unreadCount={6}
@@ -82,4 +81,5 @@ MessageList.propTypes = {
 
 
 export default MessageList
+export {ChatFilter}
 

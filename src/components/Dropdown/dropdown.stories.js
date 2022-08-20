@@ -12,7 +12,7 @@ export default {
 
 
 //下拉菜单的选项
-const ItemsArr = ['个人资料', '关闭绘画', '屏蔽此人']
+const ItemsArr = ['个人资料', '关闭会话', '屏蔽此人']
 
 
 

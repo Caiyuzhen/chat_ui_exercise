@@ -13,7 +13,7 @@ const StyledNoteCard = styled.div`
 	grid-template-columns: 60px 2fr 1fr;
 
 	${card()}
-	padding: 24px;
+	padding: 16px;
 
 	transition: all 0.3s ease-in-out;
 	&:hover {

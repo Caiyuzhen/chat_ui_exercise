@@ -43,9 +43,10 @@ const StyledContactSections = styled.section`
 //👇相册信息的样式
 //相册组件整体容器
 const AlbumSection = styled.section`
-	justify-self: stretch; //🔥🔥🔥自己占满整个 profile 的宽度！
 	display: grid;
-	justify-content:space-between;//🔥🔥🔥自己的内容左右两边对齐
+	justify-self: stretch; //🔥🔥🔥自己占满整个 profile 的宽度！
+	justify-content:center;//🔥🔥🔥自己的内容左右两边对齐
+	align-content: center;
 	align-items: center;
 	padding: 0;
 `
@@ -75,7 +76,7 @@ const AlbumTitle = styled.div`
 const Album = styled.div`
 	width: 100%;
 	display: grid;
-	justify-self:start;//靠左对齐
+	justify-self:center;//靠左对齐
 	gap:12px;
 	grid-template-columns: repeat(3,1fr); //🔥🔥🔥每行显示 3 列，平分空间！！
 	margin-top:12px;
@@ -83,8 +84,8 @@ const Album = styled.div`
 
 //具体的 Photo
 const PhotoImg = styled.img`
-	width: 120px;
-	height: 120px;
+	width: 80px;
+	height: 80px;
 	object-fit: cover;//自动填满整个蒙版
 	border-radius: 12%;
 	transition: 0.4s;

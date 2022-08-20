@@ -1,7 +1,8 @@
-import Paragraph from "components/Paragraph"
+import StyleAvatar from "components/Avatar/style";
+import Paragraph from "components/Paragraph";
 import styled from "styled-components";
 import { card } from '../../utils/mixin';
-import { StyledAvatar } from 'components/Avatar/style';
+
 
 
 
@@ -12,10 +13,11 @@ const StyledContactCard = styled.div`
 			'avatar name'
 			'avatar intro';
 	}
-	grid-template-columns: 64px auto;//头像占 64px，剩下的平分空间
+	grid-template-columns: 48px auto;//头像占 64px，剩下的平分空间
+	padding:16px;
 
 	/* 👇👇引入 Avatar 组件的样式来做 Grid 布局！！！ */
-	${StyledAvatar} {
+	${StyleAvatar} {
 		grid-area: avatar;
 	}
 
@@ -29,11 +31,13 @@ const StyledContactCard = styled.div`
 
 const UserName = styled(Paragraph).attrs({size:'large', bold:true})`
 	grid-area: name;
+	margin-left: 8px;
 `
 
 
 const Intro = styled(Paragraph).attrs({type:'secondary'})`
 	grid-area: intro;
+	margin-left: 8px;
 `
 
 

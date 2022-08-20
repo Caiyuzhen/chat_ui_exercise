@@ -13,6 +13,7 @@ const StyledFilter = styled.div`
 //左侧过滤菜单
 const FilterItems = styled.div`
 	cursor: pointer;
+	width: 200px;
 `;
 
 

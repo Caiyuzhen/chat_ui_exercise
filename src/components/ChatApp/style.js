@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const StyledChatApp = styled.div`
 	display: flex;
-	height: 100;
-	width: 100;
+	height: 100vh;
+	width: 100vw;
 	overflow: hidden;
 	position: relative;
 `;
@@ -22,13 +22,17 @@ const Nav = styled.nav`
 const SidebarFeed = styled.aside`
 	max-width: 360px;
 	min-width: 280px;
-	flex: 1;//填充满可用空间
+	height:100vh;
 	background: ${({theme}) => theme.grediantGray};//左侧 feed 加个投影背景
+	flex: 1;//填充满可用空间
 `;
 
 
 // 对话区域
-const Content = styled.main``;
+const Content = styled.main`
+ 	position: relative;
+	flex: 2;//填充满可用空间
+`;
 
 
 //右侧边栏

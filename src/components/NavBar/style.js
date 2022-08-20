@@ -27,7 +27,7 @@ const StyledNavBar = styled.nav`
 
 
 //侧导航 Tab item
-const StyledMenuItem = styled.div`
+const StyledALLMenuItem = styled.div`
 	& > a {//调整 a 超链接标签
 		width: 100%;
 		height: 74px;
@@ -46,7 +46,7 @@ const StyledMenuItem = styled.div`
 
 
 //菜单项（item）
-const MenuItems = styled.div`
+const StyledMenuItems = styled.div`
 	display: grid;
 	grid-template-rows: repeat(5 ,minmax(auto,88px)) 1fr;//表示前 5 个 图标取 auto~ 88px 的值，上面设置了 height: 74px; ，所以这里的 auto 就是 74px，然后最后一项 1fr 是浮动高度占满剩余空间(要配合 align-self:end)
 `
@@ -65,4 +65,4 @@ const MenuIcon = styled(FontAwesomeIcon)`
 
 
 export default StyledNavBar;
-export  { StyledMenuItem, MenuItems, MenuIcon }
+export  { StyledALLMenuItem, StyledMenuItems, MenuIcon }

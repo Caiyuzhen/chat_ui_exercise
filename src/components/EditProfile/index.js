@@ -35,7 +35,7 @@ function EditProfile({children,...rest}) {
 		<StyledEditProfile {...rest}> 
 			<Avatar 
 				src={face2} 
-				size='160px'
+				size='80px'
 				css={`
 					grid-area: 1 / 1 / 2 / 2; 
 					justify-self: center;

@@ -17,10 +17,12 @@ const StyledMessageCard = styled.div`
 		"avatar  name time"
 		"avatar  status status"
 		"message message message";
-	grid-template-columns: 64px 1fr 1fr;//⚡️头像列 64px（固定宽度），其余两列平分空间(浮动宽度)
-	row-gap: 16px; //网格高度行间距
+	grid-template-columns: 48px 1fr 1fr;//⚡️头像列 64px（固定宽度），其余两列平分空间(浮动宽度)
+	row-gap: 8px; //网格高度行间距
 	background: ${({ theme }) => theme.background};
-	transition: 0.4s;	
+	transition: 0.4s;
+	padding:16px;
+	
 	&:hover{
 		box-shadow: 0px 20px 50px rgba(0,0,0,0.15);
 		cursor:pointer;
@@ -54,12 +56,13 @@ const StyledMessageCard = styled.div`
 
 
 //🔥🔥用户名,传入 Text 组件，并传入样式（字号）！！这样就省了在 index.js 内去传入属性
-const Name = styled(Text).attrs({size:'xxlarge', bold:true})`
+const Name = styled(Text).attrs({size:'xlarge', bold:true})`
 	grid-area: name;//让 Name 站在上面的 Grid 的 template 位置
+	margin-left: 8px;
 `
 
 //消息时间
-const Time = styled(Text).attrs({size:'medium', type:'secondary'})`
+const Time = styled(Text).attrs({size:'small', type:'secondary'})`
 	grid-area: time;//让 Time 站在上面的 Grid 的 template 位置
 	justify-self: end;/* 靠网格的右侧对齐 */
 `
@@ -67,6 +70,7 @@ const Time = styled(Text).attrs({size:'medium', type:'secondary'})`
 //消息状态
 const Status = styled(Text).attrs({type:'secondary'})`
 	grid-area: status; //让 Status 站在上面的 Grid 的 template 位置
+	margin-left: 8px;
 `
 
 //消息文本的容器（包含消息体跟 Badge）

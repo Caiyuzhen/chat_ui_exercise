@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Text from "components/Text"
 import StyledIcon from "components/Icon/style"
-import { card } from "utils/mixin"
+// import { card } from "utils/mixin"
 
 
 //整体
@@ -16,7 +16,7 @@ const StyledTitleBar = styled.div`
 //标题区域
 const TitleArea = styled(Text).attrs({size:'large', bold:true})`
 	display:grid;//Grid 默认为垂直布局
-
+	width: 200px;
 `
 
 //操作区域

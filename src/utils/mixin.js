@@ -1,7 +1,7 @@
 // 存放一些通用的样式 js
 //比如创建【圆形】、【高亮 Tab】等
 import { css } from 'styled-components';//导入 css 函数
-import theme from 'theme'
+// import theme from 'theme'
 
 
 
