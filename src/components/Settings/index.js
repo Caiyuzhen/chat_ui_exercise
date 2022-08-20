@@ -8,6 +8,8 @@ import {ReactComponent as ArrowMenuRight} from 'assets/icons/arrowMenuRight.svg'
 import Sperator from 'components/Sperator'
 import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
 import Text from 'components/Text'
+import { Link, Route, Routes } from 'react-router-dom'
+import 'styled-components/macro'
 
 
 
@@ -29,7 +31,15 @@ function Settings({children,...rest}) {
 				<SettingItems type='switch' label='语音和视频通话提醒' />
 				<SettingItems type='switch' label='显示通知详情'/>
 				<SettingItems type='menu' label='声音'/>
-				<SettingItems type='menu' label='查看已屏蔽的好友列表'/>
+				{/* 包裹一层路由 */}
+				<Link 
+					to={`/setting/blocked`} 
+					css={`text-decoration: none; color:inherit;`}
+					>
+					<SettingItems type='menu' label='查看已屏蔽的好友列表'/>	
+				</Link>
+
+
 			</SettingsGroup>
 
 		</StyledSettings>

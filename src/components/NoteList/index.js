@@ -11,7 +11,7 @@ function NoteList({children,...rest}) {
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledNoteList 
 		<StyledNoteList {...rest}> 
-			<FilterList filterLabel='排序方式' options={['按最新笔记','按最后编辑']} actionLabel='添加笔记'>
+			<FilterList filterLabel='排序方式' options={['按最新笔记','按最后编辑']} actionLabel='Add'>
 				<Notes>
 					{new Array(10).fill(0).map((_,index)=>(
 						<NoteCard/>

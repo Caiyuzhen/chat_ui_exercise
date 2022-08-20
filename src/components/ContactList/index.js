@@ -11,7 +11,7 @@ function ContactList({children,...rest}) {
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledContactList 
 		<StyledContactList {...rest}> 
-			<FilterList filterLabel='排序方式' options={['按最新添加','按姓名排序']} actionLabel='添加好友'>
+			<FilterList filterLabel='排序方式' options={['按最新添加','按姓名排序']} actionLabel='Add'>
 				<Contacts>
 					{new Array(10).fill(0).map((_,index) => (
 						<ContactCard key={index}/>

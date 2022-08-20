@@ -38,8 +38,22 @@ const StyledALLMenuItem = styled.div`
 
 		//引入高亮色 tab 的 mixin
 		${ activeBar() }
-		//如果 active 不是激活状态，则不显示高亮【色条】，高度为 0，后续可以变为增长动画	
+		
+		//如果 active 为非激活状态，则不显示高亮【色条】，高度为 0，后续可以变为增长动画	
 		${ ( {active} ) => active ? '' : `&::before, &::after {height:0}`}
+	}
+
+	//hover 到左侧导航时，底部高亮 tab 的动画变为 100%, 配合上面 active 的 height 的 0
+	&:hover {
+		::before,
+		::after{
+			height:100%;
+		}
+		/* 图标的动画s */
+		svg {
+			transform: scale(1.2);
+			opacity: 1;
+		}
 	}
 `
 
@@ -58,6 +72,10 @@ const MenuIcon = styled(FontAwesomeIcon)`
 	color:white;
 	font-size: 24px;
 	opacity: ${ ({active}) => active ? 1 : 0.3 };
+
+	//高亮 tab 展开的动画
+	transform: scale(1);
+	transition: 0.4s;
 `
 
 

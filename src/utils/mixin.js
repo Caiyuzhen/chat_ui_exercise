@@ -18,33 +18,37 @@ export const circle = (color, size="8px") => css`
 
 
 //✅生成高亮底 Tab 的样式组件
-export const activeBar = ({barWidth='8px', shadowWidth='20px'}={}) => css`
-	position: relative;
-	&::before,&::after {
-		display: block;
-		content: '';
-		position:absolute;
-		height: 100%;
-		left: 0;
-	}
-	&::before {//高亮条
-		width:${ barWidth };
-		background:linear-gradient(
-			180deg,
-			rgba(142, 197, 242, 1) 0%,
-			rgba(169 142 242) 100%
-		)
-	}
-	&::after {//扩散投影
-		width:${ shadowWidth };
-		background:linear-gradient(
-			270deg,
-			rgba(142, 197, 242, 1) 0%,
-			rgba(169 142 242, 1) 100%
-		);
-		opacity: 0.6;
-	}
-`
+export const activeBar = ({barWidth='8px', shadowWidth='20px'}={}) => 
+	css`
+		position: relative;
+		&::before,&::after {
+			display: block;
+			content: '';
+			position:absolute;
+			height: 100%;
+			left: 0;
+			/* 高亮条的动画 */
+			transition: 0.4s cubic-bezier(0.16, 1 , 0.3, 1);
+		}
+
+		&::before {//高亮条
+			width:${ barWidth };
+			background:linear-gradient(
+				180deg,
+				rgba(142, 197, 242, 1) 0%,
+				rgba(169 142 242) 100%
+			)
+		}
+		&::after {//扩散投影
+			width:${ shadowWidth };
+			background:linear-gradient(
+				270deg,
+				rgba(142, 197, 242, 1) 0%,
+				rgba(169 142 242, 1) 100%
+			);
+			opacity: 0.6;
+		}
+	`
 
 //🎴生成 Card 样式的组件
 export const card = (radius='6px', padding='20px 30px') => css`

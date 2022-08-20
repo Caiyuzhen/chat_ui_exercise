@@ -7,18 +7,20 @@ import 'styled-components/macro'
 import Text from 'components/Text'
 import face from 'assets/images/face-female-2.jpg'
 import {ReactComponent as closeCircle} from 'assets/icons/closeCircle.svg'
-
-
-
+import { useNavigate } from "react-router-dom";
 
 
 function BlockedList({children,...rest}) {
+
+	//点击后能够返回上一层
+	const navigate = useNavigate()
+
 	return (
 		<StyledBlockedList {...rest}> 
-
 			{/* 标题 */}
 			<SettingsMenu>
-				<Icon icon={ArrowMenuLeft} css={`cursor:pointer;`}/>
+				{/* 返回icon */}
+				<Icon icon={ArrowMenuLeft} css={`cursor:pointer;`} onClick={()=> navigate('/settings')}/>
 				<Text size='xlarge'> 已屏蔽的好友列表</Text>
 			</SettingsMenu>
 
