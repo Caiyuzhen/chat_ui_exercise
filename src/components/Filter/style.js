@@ -13,13 +13,14 @@ const StyledFilter = styled.div`
 //左侧过滤菜单
 const FilterItems = styled.div`
 	cursor: pointer;
-	width: 200px;
+	min-width: 140px;
 `;
 
 
 //右侧 Add 按钮
 const Action = styled.div`
 	justify-self: end; //对齐右侧
+	min-width: 140px;
 	/* 🪵🪵注意，因为在 index.js 调用了 Text 组件，所以在 style.js 这里要更改样式得用 ${StyledText}{} 并进行 import！！！ */
 	${StyledText}{  
 		padding-right:1rem;
