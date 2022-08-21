@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import StyledChatApp, { Content, Drawer, Nav, SidebarFeed } from './style'
+import StyledChatApp, { Content, Nav, SidebarFeed } from './style'
 import NavBar from 'components/NavBar'
 import MessageList from 'components/MessageList'
 import Conversation from 'components/Conversation'
@@ -17,6 +17,7 @@ import BlockedList from 'components/BlockedList'
 
 
 function ChatApp({children,...rest}) {
+
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledChatApp 
@@ -44,22 +45,16 @@ function ChatApp({children,...rest}) {
 			{/* 消息区域 */}
 			<Content>
 				<Routes>
-					<Route path='/' element={<Conversation/>}/>
-						<Route path='files'  element={<Conversation/>} />
+					<Route path='/' element={<Conversation />}/>
+						<Route path='files'  element={<Conversation />} />
 						<Route path='contacts'  element={<Conversation/>} />
 						<Route path='notes'  element={<Conversation/>} />
 						<Route path='more'  element={<Conversation/>} />
 					<Route path='/settings' element={<Settings/>}/>
 					<Route path='/settings/blocked' element={<BlockedList/>}/>
 				</Routes>
-				
 			</Content> 
 
-
-			{/* 侧边抽屉 */}
-			<Drawer>
-				<Profile/>
-			</Drawer>
 		</StyledChatApp>
 	)
 }

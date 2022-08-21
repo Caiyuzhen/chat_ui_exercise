@@ -25,8 +25,8 @@ export default {
 	normalFont:'1.4rem',         //14px 的默认字体
 	mediumFont:'1.6rem',		//16px 的默认字体
 	largeFont: "1.8rem",		//18px 大号字体
-	xlargeFont: "2.4rem",			//20px 加大号字体
-	xxlargeFont: "2.8rem",		//24px 超大号字体
+	xlargeFont: "2rem",			//20px 加大号字体
+	xxlargeFont: "2.2rem",		//24px 超大号字体
 
 	inactiveColor: "rgba(41,47,76,0.85)", //已回复的图标颜色(旋转小箭头), 在未点击状态白背景的展示
 	inactiveColorDark: "white", //已回复的图标颜色(旋转小箭头), 在点击状态黑背景的展示

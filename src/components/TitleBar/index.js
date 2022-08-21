@@ -9,11 +9,13 @@ import { useTheme } from 'styled-components'
 import Paragraph from 'components/Paragraph'
 import { ReactComponent as Call } from 'assets/icons/call.svg'
 import { ReactComponent as Camera } from 'assets/icons/camera.svg'
+import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
 // import { ReactComponent as Options } from 'assets/icons/options.svg'
 
 
 
 function TitleBar({
+		onAvatarClick,  //🔥🔥头像的点击事件
 		avatarSrc,		//头像 url
 		avatarStatus,   //头像状态
 		name,			//用户名称
@@ -32,7 +34,14 @@ function TitleBar({
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyleTitleBar 
 		<StyleTitleBar {...rest}> 
-			<Avatar src={avatarSrc} status={avatarStatus}/>
+			<Avatar 
+				onClick={onAvatarClick} 
+				src={avatarSrc} 
+				status={avatarStatus}
+				css={`
+						cursor:pointer;
+					`}
+				/>
 			<TitleArea>
 				<Paragraph size='large'>{name}</Paragraph>
 				<Paragraph type='secondary'>

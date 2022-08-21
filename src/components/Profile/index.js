@@ -5,7 +5,6 @@ import Paragraph from 'components/Paragraph'
 import Text from 'components/Text'
 import Avatar from 'components/Avatar'
 import face4 from 'assets/images/face-male-4.jpg'
-import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
 import {faTwitter,faTumblr,faReddit} from '@fortawesome/free-brands-svg-icons'
 import { faPen } from "@fortawesome/free-solid-svg-icons";
 import Icon from 'components/Icon'
@@ -16,12 +15,14 @@ import photo3 from 'assets/images/photo3.jpg';
 import { ReactComponent as Cross } from 'assets/icons/cross.svg'
 import Button from 'components/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来更改组件样式
 
 
 
 
 //🌟Profile 组件
 function Profile({
+	onCloseClick,       //🔥从父组件传递下来的关闭侧边栏的参数//
 	showEditBtn,  		//编辑态的按钮
 	showCloseIcon=true,//关闭按钮,默认显示
 	onEdit,		 		//点击编辑按钮后要做的进一步动作,点击后进行回调
@@ -36,7 +37,7 @@ function Profile({
 	return (
 		<StyledProfile {...rest}> 	
 			{/* 在 styled 内已经包裹了 Icon，可以直接传入 svg */}
-			{showCloseIcon && <CloseIcon icon={Cross}/>	}
+			{showCloseIcon && <CloseIcon icon={Cross} onClick={onCloseClick} />	}
 			<Avatar 
 				src={face4}
 				status={status}

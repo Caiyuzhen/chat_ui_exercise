@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled,{css} from "styled-components";
 
 
 
@@ -20,8 +20,8 @@ const Nav = styled.nav`
 
 //左侧 feed
 const SidebarFeed = styled.aside`
-	max-width: 360px;
-	min-width: 280px;
+	max-width: 400px;
+	min-width: 320px;
 	height:100vh;
 	background: ${({theme}) => theme.grediantGray};//左侧 feed 加个投影背景
 	flex: 1;//填充满可用空间
@@ -31,16 +31,25 @@ const SidebarFeed = styled.aside`
 // 对话区域
 const Content = styled.main`
  	position: relative;
-	flex: 2;//填充满可用空间
+	 width: 100%;
+	/* flex: 1;//填充满可用空间 */
 `;
 
 
-//右侧边栏
-const Drawer = styled.div`
-	max-width: 320px;
-`;
+// //右侧边栏
+// const Drawer = styled.div`
+// 	max-width: 320px;
+
+// 	//👇默认为 0 px, 点击后展开
+// 	//🌟写法一：
+// 	${({show}) => show ? `width: 320px;` : `width:0px;`}
+
+// 	//🌟写法二：
+// 	/* ${({show}) => show && css`width:320px`} */
+	
+// `;
 
 
 
 export default StyledChatApp;
-export {Nav, Drawer, Content, SidebarFeed}
+export {Nav, Content, SidebarFeed}
