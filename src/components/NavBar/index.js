@@ -6,7 +6,7 @@ import StyledNavBar, { StyledALLMenuItem, StyledMenuItems, MenuIcon } from './st
 import { faCommentDots, faUsers, faFolder, faStickyNote, faEllipsisH, faCog } from "@fortawesome/free-solid-svg-icons";
 import profileImage from "assets/images/face-female-3.jpg";//注意，这里不是个 {} !!
 import "styled-components/macro";
-import { Link, matchPath, Route, Routes, useLocation } from 'react-router-dom'
+import { Link, matchPath, useLocation, Outlet } from 'react-router-dom'
 
 
 
@@ -37,7 +37,8 @@ function NavBar({...rest}) {
 
 //侧导航 Tab
 function MenuItem({
-	to='/', //用于接收路由路径！！记得定义默认的路径！！！
+	to, //用于接收路由路径！！
+	// to='/',定义默认路径的方式
 	icon, 	//是否显示图标
 	// active,  //图标是否激活(🔥下面通过路由路径判断了，所以这里不用传了)
 	showBadge, //是否显示红点
@@ -50,7 +51,7 @@ function MenuItem({
 	// 👇👇👇判断路径 path 是否为传递进来的 to XXX , 并且是精确匹配单一的 / , 然后再用 !! 感叹号转化为布尔值, 赋值给 active
 	const active = !!matchPath({
 			path: to,
-			exact: to === '/',
+			// exact: to === '/',
 		},
 		loc.pathname,//当前页面的路径
 	)

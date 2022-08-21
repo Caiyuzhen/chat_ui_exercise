@@ -36,7 +36,8 @@ function TitleBar({
 			<TitleArea>
 				<Paragraph size='large'>{name}</Paragraph>
 				<Paragraph type='secondary'>
-					<Text>离线</Text>
+					<Text>Offline</Text>
+					<Text> | </Text>
 					<Text>最后阅读时间: 3小时前</Text>
 				</Paragraph>
 			</TitleArea>

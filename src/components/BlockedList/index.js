@@ -7,12 +7,12 @@ import 'styled-components/macro'
 import Text from 'components/Text'
 import face from 'assets/images/face-female-2.jpg'
 import {ReactComponent as closeCircle} from 'assets/icons/closeCircle.svg'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 
 
 function BlockedList({children,...rest}) {
 
-	//点击后能够返回上一层
+	//⚡️⚡️点击后返回上一层设置页的路由
 	const navigate = useNavigate()
 
 	return (
@@ -20,8 +20,15 @@ function BlockedList({children,...rest}) {
 			{/* 标题 */}
 			<SettingsMenu>
 				{/* 返回icon */}
-				<Icon icon={ArrowMenuLeft} css={`cursor:pointer;`} onClick={()=> navigate('/settings')}/>
-				<Text size='xlarge'> 已屏蔽的好友列表</Text>
+				<Icon 
+					icon={ArrowMenuLeft} 
+					css={`cursor:pointer;`} 
+					width={20}
+					height={20}
+					//⚡️⚡️ 点击后返回设置页的路由
+					onClick={()=> navigate('/settings')}
+					/>
+				<Text size='large' bold> List of blocked friends </Text>
 			</SettingsMenu>
 
 			{/* 整个屏蔽列表 */}
@@ -31,14 +38,14 @@ function BlockedList({children,...rest}) {
 					return(
 						//单个屏蔽头像的样式组件
 						<ClosableAvatar key={index}>
-							<BlockedAvatar size='104px' src={face}/>
+							<BlockedAvatar size='54px' src={face}/>
 							<BlockedName>Alan</BlockedName>
-							<CloseIcon width={46} height={46} icon={closeCircle}/>
-					</ClosableAvatar>
+							<CloseIcon width={46} height={32}  icon={closeCircle}/>
+						</ClosableAvatar>
 					)
 				})}
 			</FriendList>
-
+			<Outlet/>
 		</StyledBlockedList>
 	)
 }

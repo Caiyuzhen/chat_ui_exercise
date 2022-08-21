@@ -9,16 +9,19 @@ import styled from "styled-components";
 
 
 const StyledBlockedList = styled.div`
-	padding:2vh 4vw;
+	/* padding:2vh 4vw; */
+	padding: 32px 32px 0px 32px;
 `;
 
 
 //顶部导航栏
 const SettingsMenu = styled.div`
-	height: 148px;
+	height: 48px;
 	display: grid;
 	grid-template-columns: 32px 1fr; //32px 为返回按钮，剩下的都为标题区域
 	align-items: center;
+	margin-bottom:24px;
+
 	${StyledText}{//因为是用的 Text 组件，所以这里可以单独给 Text 这个组件设置样式！！单独让它居中！！
 		grid-column: span 1/-1;//让标题变为 span 元素，并且能够占满整列宽度
 		justify-self: center;
@@ -54,7 +57,7 @@ const BlockedAvatar = styled(Avatar)`
 
 
 //名字
-const BlockedName = styled(Text).attrs({size:'large'})`
+const BlockedName = styled(Text).attrs({size:'medium'})`
 	grid-area: name;
 	margin-top: 20px;
 `
@@ -64,7 +67,10 @@ const BlockedName = styled(Text).attrs({size:'large'})`
 const CloseIcon = styled(Icon)`
 	grid-area: 2 / 3 / 5 / 4;//⚡️⚡️⚡️占 2～5 行; 3~4 列
 	z-index:10;
-	margin-top:16px;
+	margin-top:-100px;
+	/* path {
+		fill:${({theme})=>theme.primaryColor}
+	} */
 `
 
 
