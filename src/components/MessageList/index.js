@@ -35,6 +35,7 @@ function MessageList({children,...rest}) {
 							active={index === 2}//第 3 张为选中态
 							replied={index % 3 ===0}//每隔三个为已回复的状态
 							avatarSrc={face1}
+							avatarStatus={index % 2 === 0 ? 'online' : 'offline'}
 							name='Alan'
 							statusText='Online'
 							time='8小时之前'

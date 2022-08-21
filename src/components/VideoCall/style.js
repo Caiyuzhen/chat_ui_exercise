@@ -6,7 +6,7 @@ import { card } from "utils/mixin"
 
 //正常最大化的视频会议样式
 const StyledVideoCall = styled.div`
-	height: 60vh;
+	height: 100vh;
 	padding:20px;
 	padding-bottom: 40px;
 
@@ -22,6 +22,19 @@ const StyledVideoCall = styled.div`
 		'self'
 		'actions';
 `;
+
+
+//毛玻璃遮罩
+const BgGlass = styled.div`
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100vh;
+	width: 100vw;
+	background: rgba(255, 255, 255, .75);
+	-webkit-backdrop-filter: blur(40px);
+	backdrop-filter: blur(40px);
+`
 
 
 //最小化按钮
@@ -95,4 +108,4 @@ const VideoCallAlert = styled.div`
 
 
 export default StyledVideoCall;
-export {ActionGroup, Action, Minimize, Self, VideoCallAlert};
+export {ActionGroup, Action, Minimize, Self, VideoCallAlert, BgGlass};

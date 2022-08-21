@@ -15,7 +15,8 @@ import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来
 
 
 function TitleBar({
-		onAvatarClick,  //🔥🔥头像的点击事件
+		onAvatarClick,  //🔥🔥记得在这里头像的点击事件参数！
+		onVideoClick,	//🔥🔥记得在这里定义 video icon 的点击事件参数！
 		avatarSrc,		//头像 url
 		avatarStatus,   //头像状态
 		name,			//用户名称
@@ -35,6 +36,7 @@ function TitleBar({
 		// 👇把其他所有 ...rest 属性交给 StyleTitleBar 
 		<StyleTitleBar {...rest}> 
 			<Avatar 
+				//🔥🔥最终的事件触发函数
 				onClick={onAvatarClick} 
 				src={avatarSrc} 
 				status={avatarStatus}
@@ -51,8 +53,9 @@ function TitleBar({
 				</Paragraph>
 			</TitleArea>
 			<Actions>
-				<Icon icon={Call} color={theme.gray3} opacity={0.8} width={24} height={24}/>
-				<Icon icon={Camera} color={theme.gray3} opacity={0.8} width={24} height={24}/>
+				<Icon onClick={onVideoClick} icon={Call} color={theme.gray3} opacity={0.8} width={24} height={24}/>
+				{/* 🔥🔥最终的事件触发函数 */}
+				<Icon onClick={onVideoClick} icon={Camera} color={theme.gray3} opacity={0.8} width={24} height={24}/>
 				{/* ...更多icon */}
 				<Dropdown align='right' content={ItemsArr}/> 
 				{/* <Icon icon={Options} color={theme.gray3} opacity={0.8} width={24} height={24}/> */}

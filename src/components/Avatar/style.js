@@ -33,8 +33,8 @@ const StatusIcon = styled.div`
   top:4px;
 
   /*⚡️用伪元素添加元素
-  	前面有绿色圆点，内容后面有白色圆点
-	& 表示外层父 div ，也可以省略【类比图层的概念】
+  		前面有绿色圆点，内容后面有白色圆点
+		& 表示外层父 div ，也可以省略【类比图层的概念】
   */
   &::before{
 	${( { size } ) => circleMixinFunc("white",size)};
