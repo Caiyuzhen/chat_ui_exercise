@@ -18,8 +18,6 @@ import { useTrail, animated  } from 'react-spring'
 // 组装所有组件形成消息列表
 function MessageList({children,...rest}) {
 
-
-
     //🔥 React-Spring 动画库
 	/*
 		useSpring  		一个弹簧
@@ -32,14 +30,12 @@ function MessageList({children,...rest}) {
 		transform: 'translate3d(0px, 0px, 0px)',//对哪个属性进行设置，3d 能开启 GDU 加速，性能好
 		from: {transform:'translate3d(-50px, 0px, 0px)'},
 		config: {
-			mass: 0.8,//质量（越大，运动越慢）
-			tension: 280,//张力（劲，劲越大，回弹越快）
-			friction: 20,//摩擦力（阻力越小，反复越多）
+			mass: 0.9,//质量（越大，运动越慢）
+			tension: 260,//张力（劲，劲越大，回弹越快）
+			friction: 18,//摩擦力（阻力越小，反复越多）
 		},
-		delay:200,
+		delay:100, //每隔 200ms 执行一次
 	})
-
-
 
 
 	return (
