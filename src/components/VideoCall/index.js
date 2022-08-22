@@ -10,13 +10,16 @@ import Paragraph from 'components/Paragraph'
 import 'styled-components/macro'
 
 
+
 function VideoCall({
 	onHangOffClicked,
 	children,
 	...rest}) {
 
-	const [fullScreen, SetScreen] = useState(true) //默认为 false, 渲染为全屏状态
 
+	const [fullScreen, SetScreen] = useState(true) //默认为 false, 渲染为全屏状态
+	
+	
 	if(!fullScreen){//如果为不是 true, 则渲染为小窗状态
 		return (
 			<VideoCallAlert draggable="true">
@@ -35,7 +38,7 @@ function VideoCall({
 	}
 
 	return (
-		// 👇把其他所有 ...rest 属性交给 StyledVideoCall 
+		// 👇视频视图
 		<StyledVideoCall src={videoCaller} {...rest}> 
 			<BgGlass/>
 			{/* 👇最小化按钮, 点击后通过 hook 修改为最小化 */}
