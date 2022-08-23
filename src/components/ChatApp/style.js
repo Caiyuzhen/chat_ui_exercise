@@ -15,6 +15,7 @@ const StyledChatApp = styled.div`
 const Nav = styled.nav`
 	/* 禁止导航缩小 */
 	flex-shrink: 0;
+	z-index:100;
 `;
 
 

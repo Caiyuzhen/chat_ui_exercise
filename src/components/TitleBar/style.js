@@ -1,11 +1,12 @@
 import styled from "styled-components"
 import Text from "components/Text"
 import StyledIcon from "components/Icon/style"
+import { animated } from "react-spring"
 // import { card } from "utils/mixin"
 
 
 //整体
-const StyledTitleBar = styled.div`
+const StyledTitleBar = styled(animated.div)`//✈️第五步：用 animated 包裹，可以使用 react-spring 的动画属性
 	display: grid;
 	padding: 30px;
 	grid-template-columns: 64px 1fr 112px;
@@ -16,7 +17,7 @@ const StyledTitleBar = styled.div`
 //标题区域
 const TitleArea = styled(Text).attrs({size:'large', bold:true})`
 	display:grid;//Grid 默认为垂直布局
-	width: 200px;
+	width: 220px;
 `
 
 //操作区域

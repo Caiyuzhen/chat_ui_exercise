@@ -1,5 +1,6 @@
 import ChatBubble from "components/ChatBubble"
 import styled,{css} from "styled-components";
+import { animated } from "react-spring"
 
 
 
@@ -33,7 +34,7 @@ const ChatArea = styled.div`
 `
 
 //消息容器区域
-const ConversationContainer = styled.div`
+const ConversationContainer = styled(animated.div)`
 position: relative	;
 	padding: 30px 30px;
 	display: flex;

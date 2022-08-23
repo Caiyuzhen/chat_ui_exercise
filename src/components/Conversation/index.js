@@ -7,6 +7,7 @@ import Footer from 'components/Footer'
 import VoiceMessage from 'components/VoiceMessage'
 import Profile from 'components/Profile'
 import VideoCall from 'components/VideoCall'
+import { useSpring } from 'react-spring'
 
 
 
@@ -18,6 +19,38 @@ function Conversation({children,...rest}) {
 
 	//点击展开视频通话组件的事件
 	const [showVideoCalling, setVideoCalling] = useState(false)
+
+
+	//顶部栏组件的展开动画, 传递给 TitleBar 组件
+	//✈️第一步：导入 useSpring 包
+	const tBarAnimeProps = useSpring({
+		opacity: 1,
+		transform: 'translate3d(0px,0px,0px)',
+		from: { opacity: 0, transform: 'translate3d(0px,-50px,0px)' },
+		delay: 300,
+	})
+
+
+
+	//视频通话组件的展开动画, 传递给 conversation 组件
+	const conAnimeProps = useSpring({
+		opacity: 1,
+		transform: 'translate3d(0px,0px,0px)',
+		from: { opacity: 0, transform: 'translate3d(35px,0px,0px)' },
+		delay:600,
+	})
+
+
+	//底部输入框的动画
+	const inputbarAnimeProps = useSpring({
+		opacity: 1,
+		transform: 'translate3d(0px,0px,0px)',
+		from: { opacity: 0, transform: 'translate3d(0px,20px,0px)' },
+		delay: 800,
+	})
+
+
+
 
 	if(!showVideoCalling){//取反为 true 时候显示 Chat 视图
 		return (
@@ -32,8 +65,11 @@ function Conversation({children,...rest}) {
 						//👇可以理解为从 TitleBar 内取出了 onAvatarClick 事件的回调参数
 						onAvatarClick={()=> setShowDrawer(!showDrawer)}
 						onVideoClick={()=> setVideoCalling(!showVideoCalling)}
+						//✈️第二步: 添加动画属性(因为是组件，而不是样式组件！), 记得还要进入 TitleBar 去接收 tBarAnimeProps 属性！
+						animeProps={tBarAnimeProps}
 						/>
-					<ConversationContainer>
+						{/* 下面因为是样式组件，所以可以直接 style 添加动画化样式！ */}
+					<ConversationContainer style={conAnimeProps}>
 						<ChatBubble time='Yesterday 14:00'>Hi,Jimmy!</ChatBubble>
 						<MyChatBubble time='Today 10:30' type='mine'>One's courtesy is a mirror to see his image 😄.</MyChatBubble>
 						<ChatBubble time='Today 10:35'>Happy Firday 🎉!</ChatBubble>
@@ -42,7 +78,7 @@ function Conversation({children,...rest}) {
 							<VoiceMessage type='mine' time='Today11:00'/>
 						</MyChatBubble>
 					</ConversationContainer>
-					<Footer/>
+					<Footer animeProps={inputbarAnimeProps}/>
 				</ChatArea>
 	
 				{/* 右侧边栏, 给关闭 icon 传递关闭的参数！ */}

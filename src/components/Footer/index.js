@@ -18,6 +18,8 @@ import Icon from 'components/Icon'
 
 //底部消息输入框
 function Footer({
+	animeProps,
+	style,
 	content,	  //popover 浮层的内容(emoji )
 	children,
 	...rest}) 
@@ -31,7 +33,7 @@ function Footer({
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyleFooter 
-		<StyleFooter {...rest}> 
+		<StyleFooter style={{...style, ...animeProps}} {...rest}> 
 			<Input
 				placeholder='Input some friendly message...'
 				leftIcon={<Icon icon={ClipIcon} color={theme.gray3}/>}

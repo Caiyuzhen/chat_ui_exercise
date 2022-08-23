@@ -15,6 +15,8 @@ import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来
 
 
 function TitleBar({
+		animeProps, 	//✈️第三步：传入react spring 的动画属性
+		style,			//✈️第三步：合并 react spring 跟组件自身的样式，避免无法修改组件样式
 		onAvatarClick,  //🔥🔥记得在这里头像的点击事件参数！
 		onVideoClick,	//🔥🔥记得在这里定义 video icon 的点击事件参数！
 		avatarSrc,		//头像 url
@@ -33,8 +35,8 @@ function TitleBar({
 	const ItemsArr = ['个人资料', '关闭会话', '屏蔽此人']
 
 	return (
-		// 👇把其他所有 ...rest 属性交给 StyleTitleBar 
-		<StyleTitleBar {...rest}> 
+		//✈️第四步：合并...animeProps, ...style 两个属性！
+		<StyleTitleBar style={{...animeProps, ...style}} {...rest}> 
 			<Avatar 
 				//🔥🔥最终的事件触发函数
 				onClick={onAvatarClick} 

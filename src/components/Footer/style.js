@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import {animated} from "react-spring";
 
 
 
 
 
-const StyledFooter = styled.footer`
+const StyledFooter = styled(animated.footer)`
 	padding: 12px 28px;
 	width: 100%;
 `;
