@@ -24,24 +24,28 @@ function ChatApp({children,...rest}) {
 	// const location = useLocation() 
 	const location = useLocation();
 
-	const getFirstSgmtPath = (location) => location.pathname.split("/")[1];
+
+	// const getFirstSgmtPath = (location) => location.pathname.split("/")[1];
+
+	// const transitions = useTransition(location, getFirstSgmtPath, {
+	// 	from: { opacity: 0, transform: "translate3d(-100px, 0, 0)" },
+	// 	enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+	// 	leave: { opacity: 0, transform: "translate3d(-100px, 0, 1)" },
+	//   });
 
 	//第一个 location 为监听 loading 的变化
 	//第二个 location 为设置 location 对象,
-	//第三个 location 为返回的 pat
-	//transitions 为返回的路径 path 数组 name
-	// const transitions = useTransition(location, (location) => location.pathname, {
-	// 	from: { opacity: 0 ,transform: 'translate3d(-100px,0,0)' },
-    //     to: { opacity: 1, transform: 'translate3d(0,0,0)' },
-	// 	leave: { opacity:0, transform:'translate3d(-100px,0,1)'},
-	// }) 
-	// const transitions = useTransition()
+	//第三个 location 为返回的 path
+	// transitions 为返回的路径 path 数组 name
 
-	const transitions = useTransition(location, getFirstSgmtPath, {
-		from: { opacity: 0, transform: "translate3d(-100px, 0, 0)" },
-		enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
-		leave: { opacity: 0, transform: "translate3d(-100px, 0, 1)" },
-	  });
+
+	const transitions = useTransition(location, (location) => location.pathname, {
+		from: { opacity: 0 ,transform: 'translate3d(-100px,0,0)' },
+        to: { opacity: 1, transform: 'translate3d(0,0,0)' },
+		leave: { opacity:0, transform:'translate3d(-100px,0,1)'},
+	}) 
+	
+
 
 
 	return (
@@ -54,7 +58,7 @@ function ChatApp({children,...rest}) {
 
 			{/* 🚗左侧 feed, 用 Router 来定义切换的路由 */}
 			<SidebarFeed>
-				{/* 遍历 transitions 数组, 🔥🔥给item 设置别名为 location*/}
+				{/* 遍历 【transitions 数组】, 🔥🔥给item 设置别名为 location*/}
 				{transitions.map(({item: location, props, key}) => (
 					<animated.div key={key} style={props}> 
 						{/* 🔥用 Routes 包裹 Route 只加载第一个匹配到的路由，不会加载全部匹配到的 */}
@@ -69,7 +73,7 @@ function ChatApp({children,...rest}) {
 								<Route path='/settings/blocked' element={<EditProfile/>}/>
 						</Routes>		
 					</animated.div>
-				) )}
+				 ) )} 
 			</SidebarFeed>
 
 			{/* 消息区域 */}
