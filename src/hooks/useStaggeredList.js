@@ -13,7 +13,7 @@ export default function useStaggeredList(number) {
 			tension: 260,//张力（劲，劲越大，回弹越快）
 			friction: 18,//摩擦力（阻力越小，反复越多）
 		},
-		delay:100, //每隔 200ms 执行一次
+		// delay:100, //每隔 100ms 执行一次
 	})
 
 	return trailAnimes

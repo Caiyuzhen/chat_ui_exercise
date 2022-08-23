@@ -59,11 +59,18 @@ const MyChatBubble = styled(ChatBubble).attrs( {type: 'mine'} )`
 
 //右侧边栏(Profile 面板)
 const Drawer = styled.div`
+	/* 🎃🎃🎃用原生的方式实现动画的过渡属性 */
+	/* transform: translateX(200px); */
+	width: 320px;
+	opacity: 1;
+	transition: width 0.3s, opacity 0.3s;
+	will-change: width, transform;//当这两个变化时，提神给 GPU 性能
 
 	//👇默认为 0 px, 点击后展开
 	//🌟写法一：
-	${({showDrawer}) => showDrawer ? `''` : `display: none;`}
+	${({showDrawer}) => showDrawer ? `''` : `width:0; opacity:0;`}
 
+	
 	//🌟写法二：
 	/* ${({showDrawer}) => showDrawer && css`display: '';`} */
 	
