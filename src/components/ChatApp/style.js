@@ -25,6 +25,14 @@ const SidebarFeed = styled.aside`
 	height:100vh;
 	background: ${({theme}) => theme.grediantGray};//左侧 feed 加个投影背景
 	flex: 1;//填充满可用空间
+
+	position: relative;
+	z-index: 50;
+	> div { //设置侧边栏内的每一个组件
+		will-change: transform, opacity; //开启 GPU 加速
+		position: absolute;
+		width: 100%;
+	}
 `;
 
 
