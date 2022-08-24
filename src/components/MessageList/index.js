@@ -11,7 +11,7 @@ import MessageCard from 'components/MessageCard'
 import face1 from 'assets/images/face-male-1.jpg'
 import FilterList from 'components/FilterList'
 import { useTrail, animated  } from 'react-spring'
-
+import  messageListData  from 'data/messagesListData'
 
 
 
@@ -51,22 +51,40 @@ function MessageList({children,...rest}) {
 				actionLabel
 			>
 				<ChatList>
-					{[1,2,3,4,5,6].map((_,index)=>( //🍔🍔🍔🔥使用 map 循环来生成 6 张消息卡片
-						<animated.div key={index} style={trailAnimes[index]}>
-							<MessageCard 
-								key={index} //必须要加个 key ！
-								active={index === 2}//第 3 张为选中态
-								replied={index % 3 ===0}//每隔三个为已回复的状态
-								avatarSrc={face1}
-								avatarStatus={index % 2 === 0 ? 'online' : 'offline'}
-								name='Alan'
-								statusText='Online'
-								time='8小时之前'
-								message='Four short words sum up what has lifted most successful individuals above the crowd: a little bit more.'
-								unreadCount={6}
-							/>
-						</animated.div>
-					))}
+					{/* Mock 数据版 */}
+						{messageListData.map((messageListData,index)=>( //🍔🍔🍔🔥使用 map 循环来生成 6 张消息卡片
+								<animated.div key={messageListData.id} style={trailAnimes[index]}>
+									<MessageCard 
+										key={messageListData.id} //必须要加个 key ！
+										active={index === 2}//第 3 张为选中态
+										replied={messageListData.replied}//每隔三个为已回复的状态
+										avatarSrc={messageListData.avatarSrc}
+										avatarStatus={messageListData.status}
+										name={messageListData.name}
+										statusText={messageListData.statusText}
+										time={messageListData.time}
+										message={messageListData.message}
+										unreadCount={messageListData.unreadCount}
+									/>
+								</animated.div>
+							))}
+					{/* 初始版 */}
+						{/* {[1,2,3,4,5,6].map((_,index)=>( //🍔🍔🍔🔥使用 map 循环来生成 6 张消息卡片
+							<animated.div key={index} style={trailAnimes[index]}>
+								<MessageCard 
+									key={index} //必须要加个 key ！
+									active={index === 2}//第 3 张为选中态
+									replied={index % 3 ===0}//每隔三个为已回复的状态
+									avatarSrc={face1}
+									avatarStatus={index % 2 === 0 ? 'online' : 'offline'}
+									name='Alan'
+									statusText='Online'
+									time='8小时之前'
+									message='Four short words sum up what has lifted most successful individuals above the crowd: a little bit more.'
+									unreadCount={6}
+								/>
+							</animated.div>
+						))} */}
 				</ChatList>
 			</FilterList>
 		</StyleMessageList>

@@ -53,14 +53,14 @@ function ChatApp({children,...rest}) {
          			 <animated.div  style={props}>
 						{/* 🔥用 Routes 包裹 Route 只加载第一个匹配到的路由，不会加载全部匹配到的 */}
 						<Routes location={item}>
-								{/* exact 为精确匹配路由路径,  /  为根路径*/}
-								<Route path='/' element={<MessageList/>}/>
-								<Route path='/contacts'  element={<ContactList/>} />
-								<Route path='/files' element={<FileList/>} />
-								<Route path='/notes' element={<NoteList/>} />
-								<Route path='/more' element={<EditProfile/>}/>
-								<Route path='/settings' element={<EditProfile/>} />
-								<Route path='/settings/blocked' element={<EditProfile/>}/>
+							{/* exact 为精确匹配路由路径,  /  为根路径*/}
+							<Route path='/' element={<MessageList/>}/>
+							<Route path='/contacts'  element={<ContactList/>} />
+							<Route path='/files' element={<FileList/>} />
+							<Route path='/notes' element={<NoteList/>} />
+							<Route path='/more' element={<EditProfile/>}/>
+							<Route path='/settings' element={<EditProfile/>} />
+							<Route path='/settings/blocked' element={<EditProfile/>}/>
 						</Routes>		
 					</animated.div> 
 				) )}   

@@ -10,36 +10,50 @@ import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来
 import Text from 'components/Text'
 import { Link, Outlet } from 'react-router-dom'
 import 'styled-components/macro'
+import { useSpring,animated } from 'react-spring'
+
 
 
 
 //整体设置面板
 function Settings({children,...rest}) {
 
+
+	//设置面板的动画
+	const settingAnimeProps = useSpring({
+		opacity: 1,
+		transform: 'translate3d(0px,0px,0px)',
+		from: { opacity: 0, transform: 'translate3d(-50px,0px,0px)' },
+		delay: 300,
+	})
+
+
+
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledSettings 
 		<StyledSettings {...rest}> 
+			{/* 包裹一层动画 */}
+			<animated.div  style={settingAnimeProps}>
+				<SettingsGroup groupName='隐私设置'>
+					<SettingItems type='switch' label='添加好友时需要验证'/>
+					<SettingItems type='switch' label='推荐通讯录好友' description='上传的通讯录只用来匹配好友列表，本应用不会记录任何用户的通讯录数据'/>
+					<SettingItems type='switch' label='只能通过手机号找到我'/>
+				</SettingsGroup>
 
-			<SettingsGroup groupName='隐私设置'>
-				<SettingItems type='switch' label='添加好友时需要验证'/>
-				<SettingItems type='switch' label='推荐通讯录好友' description='上传的通讯录只用来匹配好友列表，本应用不会记录任何用户的通讯录数据'/>
-				<SettingItems type='switch' label='只能通过手机号找到我'/>
-			</SettingsGroup>
-
-			<SettingsGroup groupName='通知设置'>
-				<SettingItems type='switch' label='新消息通知' description='开启后新消息将会通过系统通知进行提醒'/>
-				<SettingItems type='switch' label='语音和视频通话提醒' />
-				<SettingItems type='switch' label='显示通知详情'/>
-				<SettingItems type='menu' label='声音'/>
-				{/* 包裹一层路由 */}
-				<Link 
-					to={`/settings/blocked`} 
-					css={`text-decoration: none; color:inherit;`}
-					>
-					<SettingItems type='menu' label='查看已屏蔽的好友列表'/>
-				</Link>
-
-			</SettingsGroup>
+				<SettingsGroup groupName='通知设置'>
+					<SettingItems type='switch' label='新消息通知' description='开启后新消息将会通过系统通知进行提醒'/>
+					<SettingItems type='switch' label='语音和视频通话提醒' />
+					<SettingItems type='switch' label='显示通知详情'/>
+					<SettingItems type='menu' label='声音'/>
+					{/* 包裹一层路由 */}
+					<Link 
+						to={`/settings/blocked`} 
+						css={`text-decoration: none; color:inherit;`}
+						>
+						<SettingItems type='menu' label='查看已屏蔽的好友列表'/>
+					</Link>
+				</SettingsGroup>
+			</animated.div>
 		</StyledSettings>
 	)
 }
