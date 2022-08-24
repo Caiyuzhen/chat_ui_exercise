@@ -13,6 +13,7 @@ import { Routes, Route, useLocation} from 'react-router-dom';
 import Settings from 'components/Settings'
 import BlockedList from 'components/BlockedList'
 import { useTransition, animated } from 'react-spring'
+import Input from 'components/Input'
 
 
 
@@ -43,11 +44,14 @@ function ChatApp({children,...rest}) {
 		<StyledChatApp {...rest}> 
 		
 			{/* 左侧主导航 */}
-			<Nav><NavBar/></Nav>
+			<Nav>
+				<NavBar/>
+			</Nav>
 
 
 			{/* 🚗左侧 feed, 用 Router 来定义切换的路由 */}
 			<SidebarFeed>
+
 				{/* 遍历 【transitions 数组】, 给item 设置别名为 location, styles 为动画属性*/}
 				{transitions(({ item, props }) => (
          			 <animated.div  style={props}>

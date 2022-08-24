@@ -4,14 +4,18 @@ import StyledContactCard, { Intro, UserName } from './style'
 import Avatar from 'components/Avatar'
 
 
-
-function ContactCard({children,...rest}) {
+//contact 是后写的, 传入 mock 的数据并进行解析
+function ContactCard({contact, children,...rest}) {
 
 	return (
 		<StyledContactCard {...rest}> 
-			<Avatar statis='online'/>
+			<Avatar src={contact.avatar} statis={contact.statusText}/>
+			<UserName> {contact.name} </UserName>
+			<Intro> {contact.intro} </Intro>
+			{/* 👇写死的方式, 没有用假数据 */}
+			{/* <Avatar statis='online'/>
 			<UserName> Kim </UserName>
-			<Intro> I am a software engineer </Intro>
+			<Intro> I am a software engineer </Intro> */}
 		</StyledContactCard>
 	)
 }

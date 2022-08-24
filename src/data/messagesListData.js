@@ -9,7 +9,8 @@ import face8 from 'assets/images/face-female-4.jpg'
 import face9 from 'assets/images/face-female-5.jpg'
 
 
-export default [
+
+const messageListData = [
 	{
 	  id: 1,
 	  avatarSrc: face1,
@@ -77,3 +78,7 @@ export default [
 	  replied: true,
 	},
   ];
+
+
+
+  export default messageListData;

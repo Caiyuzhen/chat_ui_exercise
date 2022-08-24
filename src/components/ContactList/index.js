@@ -5,7 +5,7 @@ import FilterList from 'components/FilterList'
 import ContactCard from 'components/ContactCard'
 import useStaggeredList from 'hooks/useStaggeredList'
 import { animated  } from 'react-spring'
-
+import contactsData from 'data/contactListData'
 
 
 function ContactList({children,...rest}) {
@@ -17,13 +17,23 @@ function ContactList({children,...rest}) {
 		// 👇把其他所有 ...rest 属性交给 StyledContactList 
 		<StyledContactList {...rest}> 
 			<FilterList filterLabel='排序方式' options={['按最新添加','按姓名排序']} actionLabel='Add'>
+				{/* 👇 mock 的数据 */}
 				<Contacts>
+					{contactsData.map((contactsData,index) => (
+						<animated.div key={contactsData.id} style={trailAnimes[index]}>
+							{/* 🔥🔥把遍历出来的 contact 数据往下传递！！ */}
+							<ContactCard key={contactsData.id} contact={contactsData}/>
+						</animated.div>
+					))}
+				</Contacts>
+				{/* 👇写死的数据 */}
+				{/* <Contacts>
 					{new Array(10).fill(0).map((_,index) => (
 						<animated.div key={index} style={trailAnimes[index]}>
 							<ContactCard key={index}/>
 						</animated.div>
 					))}
-				</Contacts>
+				</Contacts> */}
 			</FilterList>
 		</StyledContactList>
 	)

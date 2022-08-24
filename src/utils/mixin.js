@@ -21,17 +21,18 @@ export const circle = (color, size="8px") => css`
 export const activeBar = ({barWidth='8px', shadowWidth='20px'}={}) => 
 	css`
 		position: relative;
-		&::before,&::after {
+		&::before,&::after { //before 表示高亮色， after 表示阴影色
 			display: block;
 			content: '';
 			position:absolute;
 			height: 100%;
 			left: 0;
+			border-radius: 0 12px 12px 0;
 			/* 高亮条的动画 */
 			transition: 0.4s cubic-bezier(0.16, 1 , 0.3, 1);
 		}
 
-		&::before {//高亮条
+		&::before {//高亮条及颜色 //before 表示高亮色， after 表示阴影色
 			width:${ barWidth };
 			background:linear-gradient(
 				180deg,
@@ -39,7 +40,7 @@ export const activeBar = ({barWidth='8px', shadowWidth='20px'}={}) =>
 				rgba(169 142 242) 100%
 			)
 		}
-		&::after {//扩散投影
+		&::after {//扩散投影 //before 表示高亮色， after 表示阴影色
 			width:${ shadowWidth };
 			background:linear-gradient(
 				270deg,

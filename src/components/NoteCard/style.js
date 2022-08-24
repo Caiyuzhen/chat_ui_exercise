@@ -39,6 +39,11 @@ const NoteTitle = styled(Heading).attrs({level:2})`
 	align-self: start;
 	margin-left: 12px;
 	align-self: center;
+	/* 👇超过就省略 */
+	width:128px; //grid 布局内要写这个宽度才能出现...！!
+	text-overflow: ellipsis !important;//显示省略号
+	white-space: nowrap; //超出部分隐藏
+	overflow: hidden; //不换行
 `
 
 

@@ -21,8 +21,8 @@ const Nav = styled.nav`
 
 //左侧 feed
 const SidebarFeed = styled.aside`
-	max-width: 400px;
-	min-width: 320px;
+	max-width: 440px;
+	min-width: 380px;
 	height:100vh;
 	background: ${({theme}) => theme.grediantGray};//左侧 feed 加个投影背景
 	flex: 1;//填充满可用空间
