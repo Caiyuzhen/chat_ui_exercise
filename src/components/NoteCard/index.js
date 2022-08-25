@@ -5,16 +5,16 @@ import photo2 from 'assets/images/photo2.jpg'
 
 
 
-function NoteCard({children,...rest}) {
+function NoteCard({notesData, children,...rest}) {
 
 	return (
 		// 👇把其他所有 ...rest 属性交给 StyledNoteCard 
 		<StyledNoteCard {...rest}> 
 			{children}
-			<NoteTitle> This is an note itle </NoteTitle>
-			<NoteImage src={photo2}/>
-			<NoteExcerpt> 这是一则很长很长很长的笔记摘要 </NoteExcerpt>
-			<NotePublishTime> 2022-12-21 </NotePublishTime>
+			<NoteTitle> {notesData.title} </NoteTitle>
+			<NoteImage src={notesData.image}/>
+			<NoteExcerpt> {notesData.excerpt} </NoteExcerpt>
+			<NotePublishTime> {notesData.publishedAt} </NotePublishTime>
 		</StyledNoteCard>
 	)
 }

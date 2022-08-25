@@ -8,12 +8,18 @@ import Text from 'components/Text'
 import face from 'assets/images/face-female-2.jpg'
 import {ReactComponent as closeCircle} from 'assets/icons/closeCircle.svg'
 import { useNavigate, Outlet } from "react-router-dom";
+import blockedData from 'data/blockedData'
+import { useTransition, animated } from 'react-spring'
+
+
 
 
 function BlockedList({children,...rest}) {
 
 	//⚡️⚡️点击后返回上一层设置页的路由
 	const navigate = useNavigate()
+
+
 
 	return (
 		<StyledBlockedList {...rest}> 
@@ -31,19 +37,31 @@ function BlockedList({children,...rest}) {
 				<Text size='large' bold> List of blocked friends </Text>
 			</SettingsMenu>
 
+
 			{/* 整个屏蔽列表 */}
 			<FriendList>
+				{/* 🔥🔥🔥🔥🔥使用 mock 的数据🔥🔥🔥🔥🔥 */} 
+					{blockedData.map((blockedData, index)=>{//生成 8 个，从 0 开始索引 !!
+						return(
+							//单个屏蔽头像的样式组件
+							<ClosableAvatar key={blockedData.id}>
+								<BlockedAvatar size='54px' src={blockedData.avatarSrc}/>
+								<BlockedName> {blockedData.name} </BlockedName>
+								<CloseIcon width={46} height={32}  icon={closeCircle}/>
+							</ClosableAvatar>
+						)
+					})}
 				{/* 🔥🔥🔥🔥🔥使用数组生成多个列表🔥🔥🔥🔥🔥 */} 
-				{new Array(8).fill(0).map((_,index)=>{//生成 8 个，从 0 开始索引 !!
-					return(
-						//单个屏蔽头像的样式组件
-						<ClosableAvatar key={index}>
-							<BlockedAvatar size='54px' src={face}/>
-							<BlockedName>Alan</BlockedName>
-							<CloseIcon width={46} height={32}  icon={closeCircle}/>
-						</ClosableAvatar>
-					)
-				})}
+					{/* {new Array(8).fill(0).map((_,index)=>{//生成 8 个，从 0 开始索引 !!
+						return(
+							//单个屏蔽头像的样式组件
+							<ClosableAvatar key={index}>
+								<BlockedAvatar size='54px' src={face}/>
+								<BlockedName>Alan</BlockedName>
+								<CloseIcon width={46} height={32}  icon={closeCircle}/>
+							</ClosableAvatar>
+						)
+					})} */}
 			</FriendList>
 			<Outlet/>
 		</StyledBlockedList>

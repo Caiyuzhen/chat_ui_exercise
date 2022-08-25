@@ -5,7 +5,7 @@ import NoteCard from 'components/NoteCard'
 import FilterList from 'components/FilterList'
 import useStaggeredList from 'hooks/useStaggeredList'
 import { animated  } from 'react-spring'
-
+import notesData from 'data/notesListData'
 
 
 function NoteList({children,...rest}) {
@@ -18,11 +18,16 @@ function NoteList({children,...rest}) {
 		<StyledNoteList {...rest}> 
 			<FilterList filterLabel='排序方式' options={['按最新笔记','按最后编辑']} actionLabel='Add'>
 				<Notes>
-					{new Array(10).fill(0).map((_,index)=>(
+					{notesData.map((notesData,index)=>(
+						<animated.div key={notesData.id} style={trailAnimes[index]}>
+							<NoteCard key={notesData.id} notesData={notesData}/>
+						</animated.div>
+					))}
+					{/* {new Array(10).fill(0).map((_,index)=>(
 						<animated.div key={index} style={trailAnimes[index]}>
 							<NoteCard key={index}/>
 						</animated.div>
-					))}
+					))} */}
 				</Notes>
 			</FilterList>
 		</StyledNoteList>

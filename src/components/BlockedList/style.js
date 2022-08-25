@@ -67,7 +67,8 @@ const BlockedName = styled(Text).attrs({size:'medium'})`
 const CloseIcon = styled(Icon)`
 	grid-area: 2 / 3 / 5 / 4;//⚡️⚡️⚡️占 2～5 行; 3~4 列
 	z-index:10;
-	margin-top:-100px;
+	margin-top:-94px;
+	margin-right:-16px;
 	/* path {
 		fill:${({theme})=>theme.primaryColor}
 	} */
