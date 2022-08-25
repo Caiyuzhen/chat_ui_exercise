@@ -26,7 +26,8 @@ function MessageList({children,...rest}) {
 		useTransition  多个组件间的切换你
 		useChain       顺序执行，前一个执行了后一个才执行
 	*/ 
-	const trailAnimes = useTrail(6,{//6为数量长度
+
+	const trailAnimes = useTrail(messageListData.length,{//6为数数组的长度 -> messageListData.length
 		transform: 'translate3d(0px, 0px, 0px)',//对哪个属性进行设置，3d 能开启 GDU 加速，性能好
 		from: {transform:'translate3d(-50px, 0px, 0px)'},
 		config: {
