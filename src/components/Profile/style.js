@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import arrowRight from "assets/icons/arrowRight.svg";
 import Icon from "components/Icon"
+import { animated } from "react-spring"
 
 
 //整体 profile 的样式
-const StyledProfile = styled.div`
+const StyledProfile = styled(animated.div)`
 	display: grid;
 	align-content: start; //水平靠上对齐
 	justify-content: center;

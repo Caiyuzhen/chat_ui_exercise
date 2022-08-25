@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Text from "components/Text";
+import { animated } from "react-spring"
 
-const StyledEditProfile = styled.div`
+const StyledEditProfile = styled(animated.div)`
 	display: grid;
 	grid-template-columns: 1fr;//只有一列
 	row-gap: 20px;//行间距

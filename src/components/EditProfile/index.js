@@ -15,25 +15,41 @@ import Option from 'components/Option'
 import LabelContainer from 'components/LabelContainer'
 import Icon from 'components/Icon'
 import {faTwitter,faTumblr,faReddit} from '@fortawesome/free-brands-svg-icons'
+import {  useSpring } from 'react-spring'
+
 
 
 
 function EditProfile({children,...rest}) {
+
+
+	const sideBarAnimeProps = useSpring({
+		opacity: 1,
+		transform: 'translate3d(0px,0px,0px)',
+		from: { opacity: 0, transform: 'translate3d(-50px,0px,0px)' },
+		delay: 200,
+	})
+
+
+
+
 	//👇用于判断 profile 是显示编辑态还是阅读态(false)
 	const [showEdit, setShowEdit] = useState(false)
+
 	// 如果为 true 就直接展示 编辑态的 Profile 
 	if(!showEdit){
 		//Prodile 组件内有编辑事件，当传入 Edit 才会激活
 		//🔥🔥激活的话d当 onclick 就调用 ()=>setShowEdit(true) 这个 事件，把 showEdit 改为 true, 然后就会显示下面的编辑、关闭按钮
 		return <Profile 
-			onEdit={()=>setShowEdit(true)}
-			showEditBtn
-			showCloseIcon={false}
-			/>
+					animeProps={sideBarAnimeProps}
+					onEdit={()=>setShowEdit(true)}
+					showEditBtn
+					showCloseIcon={false}
+				/>
 	}
 
 	return (
-		<StyledEditProfile {...rest}> 
+		<StyledEditProfile style={sideBarAnimeProps} {...rest}> 
 			<Avatar 
 				src={face2} 
 				size='80px'
@@ -95,6 +111,7 @@ function EditProfile({children,...rest}) {
 			<SocialIconInput icon={faTumblr} bgColor='#36465D'/>
 			<SocialIconInput icon={faReddit} bgColor='#FF4500'/>
 		</StyledEditProfile>
+
 	)
 }
 
@@ -112,10 +129,6 @@ function SocialIconInput({ icon, bgColor, ...rest}){
 
 
 
-/*	🔥🔥用来检查 props 参数是否符合要求(定义属性规范)*/
-EditProfile.propTypes = {
-	children: PropTypes.any
-};
 
 
 

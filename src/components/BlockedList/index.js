@@ -51,7 +51,8 @@ function BlockedList({children,...rest}) {
 					width={20}
 					height={20}
 					//⚡️⚡️ 点击后返回设置页的路由
-					onClick={()=> navigate('/settings')}
+					// onClick={()=> navigate('/settings')}//方法一：直接跳转路径
+					onClick={()=> navigate(-1)}//方法二：-1，向上走一层
 					/>
 				<Text size='large' bold> List of blocked friends </Text>
 			</SettingsMenu>

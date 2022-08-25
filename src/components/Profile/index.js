@@ -22,7 +22,8 @@ import 'styled-components/macro'//🔥🔥🔥很关键，能够使用 css`` 来
 
 //🌟Profile 组件
 function Profile({
-	onCloseClick,       //🔥从父组件传递下来的关闭侧边栏的参数//
+	animeProps,			//从父组件传递下来的动画参数
+	onCloseClick,       //🔥从父组件传递下来的关闭侧边栏的参数
 	showEditBtn,  		//编辑态的按钮
 	showCloseIcon=true,//关闭按钮,默认显示
 	onEdit,		 		//点击编辑按钮后要做的进一步动作,点击后进行回调
@@ -31,11 +32,12 @@ function Profile({
 	area,  	     		//地区
 	signature,   		//个性签名
 	children,
+	style,
 	...rest
 	}) {
 
 	return (
-		<StyledProfile {...rest}> 	
+		<StyledProfile style={{...animeProps, ...style}} {...rest}> 	
 			{/* 在 styled 内已经包裹了 Icon，可以直接传入 svg */}
 			{showCloseIcon && <CloseIcon icon={Cross} onClick={onCloseClick} />	}
 			<Avatar 

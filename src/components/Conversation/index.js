@@ -31,7 +31,6 @@ function Conversation({children,...rest}) {
 	})
 
 
-
 	//视频通话组件的展开动画, 传递给 conversation 组件
 	const conAnimeProps = useSpring({
 		opacity: 1,
@@ -68,7 +67,8 @@ function Conversation({children,...rest}) {
 						//✈️第二步: 添加动画属性(因为是组件，而不是样式组件！), 记得还要进入 TitleBar 去接收 tBarAnimeProps 属性！
 						animeProps={tBarAnimeProps}
 						/>
-						{/* 下面因为是样式组件，所以可以直接 style 添加动画化样式！ */}
+
+					{/* 下面因为是样式组件，所以可以直接 style 添加动画化样式！ */}
 					<ConversationContainer style={conAnimeProps}>
 						<ChatBubble time='Yesterday 14:00'>Hi,Jimmy!</ChatBubble>
 						<MyChatBubble time='Today 10:30' type='mine'>One's courtesy is a mirror to see his image 😄.</MyChatBubble>
@@ -78,6 +78,7 @@ function Conversation({children,...rest}) {
 							<VoiceMessage type='mine' time='Today11:00'/>
 						</MyChatBubble>
 					</ConversationContainer>
+					
 					<Footer animeProps={inputbarAnimeProps}/>
 				</ChatArea>
 	

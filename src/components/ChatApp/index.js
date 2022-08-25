@@ -64,7 +64,8 @@ function ChatApp({children,...rest}) {
 							<Route path='/notes' element={<NoteList/>} />
 							<Route path='/more' element={<EditProfile/>}/>
 							<Route path='/settings' element={<EditProfile/>} />
-							<Route path='/settings/blocked' element={<EditProfile/>}/>
+							<Route path='/settings/*' element={<EditProfile/>}/>
+							{/*  /settings/* 表示 settings 下的所有子路由都会显示  <EditProfile/> , 也可以写成 path='/settings/blocked'       */}
 						</Routes>		
 					</animated.div> 
 				) )}   
